@@ -1,0 +1,58 @@
+{
+  "dependencies": {
+    "@emotion/react": "^11.13.3",
+    "@emotion/styled": "^11.13.0",
+    "@fontsource/roboto": "^5.1.0",
+    "@fortawesome/fontawesome-svg-core": "^6.6.0",
+    "@fortawesome/free-brands-svg-icons": "^6.6.0",
+    "@fortawesome/free-regular-svg-icons": "^6.6.0",
+    "@fortawesome/free-solid-svg-icons": "^6.6.0",
+    "@fortawesome/react-fontawesome": "^0.2.2",
+    "@mui/icons-material": "^6.1.5",
+    "@mui/material": "^6.1.5",
+    "@mui/styled-engine-sc": "^6.1.5",
+    "@mui/x-charts": "^7.21.0",
+    "axios": "^1.7.7",
+    "bootstrap": "^5.3.3",
+    "express": "^4.21.1",
+    "masonry-layout": "^4.2.2",
+    "react": "^18.3.1",
+    "react-bootstrap": "^2.10.5",
+    "react-dom": "^18.3.1",
+    "react-masonry-component": "^6.3.0",
+    "react-masonry-css": "^1.0.16",
+    "react-router-dom": "^6.27.0",
+    "recharts": "^2.13.0",
+    "styled-components": "^6.1.13"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.25.9",
+    "@babel/core": "^7.25.9",
+    "@babel/preset-react": "^7.25.9",
+    "@parcel/transformer-sass": "^2.12.0",
+    "buffer": "^6.0.3",
+    "parcel": "^2.12.0",
+    "process": "^0.11.10",
+    "tota11y": "^0.1.6"
+  },
+  "parcel": {
+    "jsc": {
+      "transform": {
+        "react": {
+          "throwIfNamespace": false
+        }
+      }
+    }
+  },
+  "name": "porfolio",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "proxy": "https://api.airtable.com"
+}
