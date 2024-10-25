@@ -28,9 +28,10 @@ const Sample = () => {
   }, []);
 
   return (
-    <div className="container py-5">
-      <h1 className="display-5 fw-bold text-body-emphasis lh-2 mb-4 px-3">Projects</h1>
-      <div className="row row-cols-1 row-cols-md-3 g-4">
+    <div className='px-4 py-2 my-5'>
+    <div className="container">
+       <h1 className="display-5 fw-bold text-body-emphasis text-center">Training<span className="special-purple"> Projects</span></h1>
+      <div className="row row-cols-1 row-cols-md-3 g-4 py-5">
         {records.map((record) => (
           <div className="col" key={record.id}>
             <div className="card h-100">
@@ -51,6 +52,7 @@ const Sample = () => {
           </div>
         ))}
       </div>
+    </div>
     </div>
   );
 };

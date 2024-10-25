@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
+import Nav from "react-bootstrap/Nav";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import "../../index.scss";
 
 export const NavBar = () => {
@@ -25,20 +27,28 @@ export const NavBar = () => {
   }, [theme]);
 
   return (
-    <div className="container">
-      <header className="d-flex flex-wrap justify-content-between py-4 mb-2">
-        <a href="/" className="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-          <svg className="bi me-2" width="40" height="32"></svg>
-          <span className="fs-4">{language === "EN" ? "Simple header" : "Einfacher Header"}</span>
-        </a>
+   <div className="container">
+      <Nav className="navbar navbar-expand-md navbar-white bg-white py-3 mb-2">
+  <div className="container-fluid">
+    {/* Brand / Header Title */}
+    <a href="/" className="navbar-brand d-flex align-items-center">
+      <svg className="bi me-2" width="40" height="32"></svg>
+      <span className="fs-4">{language === "EN" ? "Simple header" : "Einfacher Header"}</span>
+    </a>
 
- {/* Language Toggle Switch */}
- <div className="form-check form-switch me-3">
+
+
+ 
+
+      {/* Right Side Toggle Switches */}
+      <div className="d-flex align-items-center ms-auto">
+        {/* Language Toggle */}
+        <div className="form-check form-switch me-3">
           <input 
             className="form-check-input" 
             type="checkbox" 
             id="languageToggle" 
-            disabled={isDisabled} // Disabled attribute
+            disabled={isDisabled}
             onChange={handleLanguageToggle} 
             checked={language === "DE"} 
           />
@@ -47,41 +57,59 @@ export const NavBar = () => {
           </label>
         </div>
 
-        {/* Theme Toggle Switch */}
+        {/* Theme Toggle */}
         <div className="form-check form-switch">
           <input 
             className="form-check-input" 
             type="checkbox" 
             id="themeToggle" 
-            disabled={isDisabled} // Disabled attribute
+            disabled={isDisabled}
             onChange={handleThemeToggle} 
             checked={theme === "dark"} 
           />
           <label className="form-check-label" htmlFor="themeToggle">
-            {theme === "light" ? "Light Mode" : "Dark Mode"}
+            {theme === "light" ? "Light" : "Dark"}
           </label>
+        </div>
+      </div>
+
+      <button 
+      className="navbar-toggler" 
+      type="button" 
+      data-bs-toggle="collapse" 
+      data-bs-target="#navbarNav" 
+      aria-controls="navbarNav" 
+      aria-expanded="false" 
+      aria-label="Toggle navigation"
+    >
+      <span className="navbar-toggler-icon"></span>
+    </button>
+
+         {/* Collapsible Menu Content */}
+    <div className="collapse navbar-collapse" id="navbarNav">
+      {/* Navigation Buttons */}
+      <ul className="navbar-nav ms-auto mb-2 mb-lg-0 custom-nav-buttons">
+              <li className="nav-item">
+                <button className="btn btn-outline-primary">{language === "EN" ? "Home" : "Startseite"}</button>
+              </li>
+              <li className="nav-item">
+                <button className="btn btn-primary ">{language === "EN" ? "Projects" : "Projekte"}</button>
+              </li>
+              <li className="nav-item">
+                <button className="btn btn-primary">{language === "EN" ? "Skills" : "Fähigkeiten"}</button>
+              </li>
+              <li className="nav-item">
+                <button className="btn btn-outline-primary ">{language === "EN" ? "Tools" : "Werkzeuge"}</button>
+              </li>
+            </ul>
+         
+    
+    </div>
+  </div>
+</Nav>
 </div>
 
 
-
-        <ul className="nav nav-pills">
-          <li className="nav-item">
-            <a href="#" className="btn btn-outline-primary" aria-current="page">{language === "EN" ? "Home" : "Startseite"}</a>
-          </li>
-          <li className="nav-item">
-            <a href="#" className="btn btn-primary">{language === "EN" ? "Projects" : "Projekte"}</a>
-          </li>
-          <li className="nav-item">
-            <a href="#" className="btn btn-primary">{language === "EN" ? "Skills" : "Fähigkeiten"}</a>
-          </li>
-          <li className="nav-item">
-            <a href="#" className="btn btn-outline-primary">{language === "EN" ? "Tools" : "Werkzeuge"}</a>
-          </li>
-        </ul>
-
-       
-        
-      </header>
-    </div>
+ 
   );
 };
