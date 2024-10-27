@@ -8,6 +8,7 @@ import { Hero } from '../hero/hero';
 import { Tools } from '../tools/tools';
 import Sample from '../sample/sample';
 import ItemDetail from '../project/project'; // Import the new ItemDetail component
+import { Ambition } from '../ambition/ambition';
 
 export const Main = () => {
   return (
@@ -20,6 +21,7 @@ export const Main = () => {
           element={
             <>
               <Hero />
+              <Ambition />
               <Sample />
               <ChartsOverviewDemo />
               <Tools />

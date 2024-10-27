@@ -30,7 +30,7 @@ const toolsData = [
 export const Tools = () => {
   return (
     <>
-       <div className="px-4 py-5 my-5 text-center" style={{ backgroundColor: "#f3eefa" }}>
+       <div className="px-4 py-5 my-5 text-center mb-5" style={{ backgroundColor: "#f3eefa" }}>
         <h1 className="display-5 fw-bold text-body-emphasis">Tools & <span className="special-black">Technologies</span></h1>
         <div className="col-lg-6 mx-auto">
           <p className="lead mb-4">These are the tools, frameworks, libraries, programming & meta languages and more that I have been training on...</p>

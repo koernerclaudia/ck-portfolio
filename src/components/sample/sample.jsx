@@ -7,7 +7,7 @@ import "../sample/sample.scss";
 const Sample = () => {
   const [records, setRecords] = useState([]);
   const [techStackNames, setTechStackNames] = useState({});
-  const colors = ["#D7C6F3", "#f3eefa"]; // add more colors as needed
+  const colors = ["#f3eefa"]; // add more colors as needed
 
   useEffect(() => {
     const fetchData = async () => {
