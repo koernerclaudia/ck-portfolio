@@ -2,9 +2,10 @@ import React from "react";
 import "../../index.scss";
 
 
+
 export const AboutMe = () => {
   return (
-    <div className='px-4 py-5 my-5 border-top'>
+    <div className='px-4 py-2 my-5'>
     <div className="container">
        <h1 className="display-5 fw-bold text-body-emphasis text-center">Quick info <span className="special-purple">about me</span></h1>
     <div className="row g-4 py-5 row-cols-1 row-cols-lg-3 ">

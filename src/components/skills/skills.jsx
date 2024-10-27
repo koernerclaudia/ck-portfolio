@@ -7,40 +7,40 @@ export default function ChartsOverviewDemo() {
   // Define your chart data in a JSON format
   const chartData = [
     {
-      title: "Chart 1",
+      title: "Meta & Programming Languages",
       labels: ['HTML', 'CSS', 'JavaScript'],
       values: [80, 70, 40],
-      color: '#FF5722'
+      color: '#997dff'
     },
     {
-      title: "Chart 2",
+      title: "Frontend Technologies",
       labels: ['React', 'Angular', 'Vue'],
       values: [60, 50, 70],
-      color: '#4CAF50'
+      color: '#EFBCD5'
     },
     {
-      title: "Chart 3",
+      title: "Backend Technologies",
       labels: ['Node.js', 'Python', 'Ruby'],
       values: [90, 80, 50],
-      color: '#2196F3'
+      color: '#85BFB6'
     },
     {
-      title: "Chart 4",
+      title: "Agile Practises",
       labels: ['Java', 'C#', 'PHP'],
       values: [70, 60, 80],
-      color: '#FF9800'
+      color: '#528A8F'
     },
     {
-      title: "Chart 5",
+      title: "UI Design",
       labels: ['Swift', 'Go', 'Kotlin'],
       values: [75, 85, 90],
-      color: '#9C27B0'
+      color: '#BE97C6'
     },
     {
-      title: "Chart 6",
+      title: "NoCode Tools",
       labels: ['Swift', 'Go', 'Kotlin'],
       values: [75, 85, 90],
-      color: '#9C27B0'
+      color: '#D7C6F3'
     },
   ];
 
@@ -63,8 +63,9 @@ export default function ChartsOverviewDemo() {
                   yAxis={[
                     {
                       valueFormatter: (value) => `${(value).toLocaleString()}%`,
-                      label: 'Skills Level',
+                      // label: 'Skills Level',
                       max: 100,
+                      increment: 20,
                     },
                   ]}
                   width={350} // You can adjust the width if needed

@@ -24,6 +24,11 @@
 @import "../node_modules/bootstrap/scss/_variables";
 @import "../node_modules/bootstrap/scss/_variables-dark";
 
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: #ffffff;
+  color: #212529;
+}
 
 
 .btn {
@@ -45,17 +50,14 @@
 }
 
 .btn-primary {
-  
   background-color: #997dff !important;
   border-radius: 50rem !important;
   border-color:  #997dff !important;
   color: #000000 !important;
   margin: 0 3px !important;
-
 }
 
 .btn-outline-primary {
-  
   background-color: #ffffff !important;
   border-radius: 50rem !important;
   border-color:  #997dff !important;
@@ -64,17 +66,14 @@
 }
 
 .btn-secondary {
-  
   background-color: #85BFB6 !important;
   border-radius: 50rem !important;
   border-color:  #85BFB6 !important;
   color: #000000 !important;
   margin: 0 3px !important;
-
 }
 
 .btn-outline-secondary {
-  
   background-color: #ffffff !important;
   border-radius: 50rem !important;
   border-color:  #85BFB6 !important;
@@ -82,15 +81,33 @@
   margin: 0 3px !important;
 }
 
-.btn-black {
-  
+.btn-black-purple {
   background-color: #000000 !important;
   border-radius: 50rem !important;
   border-color:  #997dff !important;
   color: #997dff !important;
   margin: 0 3px !important;
-
 }
+
+.btn-black-green {
+  background-color: #000000 !important;
+  border-radius: 50rem !important;
+  border-color:  #85BFB6 !important;
+  color: #85BFB6 !important;
+  margin: 0 3px !important;
+}
+
+.btn-small-tech  {
+    background-color: #000000 !important;
+    border: none;
+    border-radius: 50rem !important;
+    color: #ffffff !important;
+    margin: 0 3px !important;
+    font-size: 0.7rem;
+    margin: 2px;
+
+  }
+
 
 
 /* Adjust link layout and styling for mobile screens */

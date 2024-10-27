@@ -1,6 +1,8 @@
 import React from "react";
 import '../../index.scss';
 import myHeader from '../../assets/Header-bw-small.png';
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons"; // Correct brand icon
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export const Hero = () => {
   return (
@@ -16,8 +18,8 @@ export const Hero = () => {
             <p className="lead">This site showcases some web & app projects I set up during my Full Stack Development Training during the summer of 2024. Enjoy browsing!</p>
             <div className="d-grid gap-2 d-md-flex justify-content-md-start">
               <button type="button" className="btn btn-primary btn-md px-4 me-md-2">My Website</button>
-              <button type="button" className="btn btn-secondary btn-md px-4">LinkedIn</button>
-              <button type="button" className="btn btn-black btn-md px-4">Github</button>
+              <button type="button" className="btn btn-black-green btn-md px-4"><FontAwesomeIcon icon={faLinkedin} />&nbsp;&nbsp;LinkedIn</button>
+              <button type="button" className="btn btn-black-purple btn-md px-4"> <FontAwesomeIcon icon={faGithub} />&nbsp;&nbsp;Github</button>
             </div>
           </div>
         </div>
