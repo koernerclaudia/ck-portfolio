@@ -22,8 +22,13 @@
 @import "../node_modules/bootstrap/scss/bootstrap-utilities.scss";
 @import "../node_modules/bootstrap/scss/_functions";
 @import "../node_modules/bootstrap/scss/_variables";
-@import "../node_modules/bootstrap/scss/_variables-dark";x
+@import "../node_modules/bootstrap/scss/_variables-dark";
 
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: #ffffff;
+  color: #212529;
+}
 
 
 .btn {
@@ -45,17 +50,14 @@
 }
 
 .btn-primary {
-  
   background-color: #997dff !important;
   border-radius: 50rem !important;
   border-color:  #997dff !important;
   color: #000000 !important;
   margin: 0 3px !important;
-
 }
 
 .btn-outline-primary {
-  
   background-color: #ffffff !important;
   border-radius: 50rem !important;
   border-color:  #997dff !important;
@@ -64,17 +66,14 @@
 }
 
 .btn-secondary {
-  
   background-color: #85BFB6 !important;
   border-radius: 50rem !important;
   border-color:  #85BFB6 !important;
   color: #000000 !important;
   margin: 0 3px !important;
-
 }
 
-.btn-outline-primary {
-  
+.btn-outline-secondary {
   background-color: #ffffff !important;
   border-radius: 50rem !important;
   border-color:  #85BFB6 !important;
@@ -82,14 +81,38 @@
   margin: 0 3px !important;
 }
 
-.btn-black {
-  
+.btn-black-purple {
   background-color: #000000 !important;
   border-radius: 50rem !important;
   border-color:  #997dff !important;
   color: #997dff !important;
   margin: 0 3px !important;
+}
 
+.btn-black-green {
+  background-color: #000000 !important;
+  border-radius: 50rem !important;
+  border-color:  #85BFB6 !important;
+  color: #85BFB6 !important;
+  margin: 0 3px !important;
+}
+
+.btn-small-tech  {
+    background-color: #000000 !important;
+    border: none;
+    border-radius: 50rem !important;
+    color: #ffffff !important;
+    margin: 0 3px !important;
+    font-size: 0.7rem;
+    margin: 2px;
+
+  }
+
+
+
+/* Adjust link layout and styling for mobile screens */
+.custom-navbar .custom-nav-buttons .nav-item {
+  margin-bottom: 0.5rem; /* Spacing between buttons on mobile */
 }
 
 
@@ -189,3 +212,25 @@
 }
 
 
+/* Style for small screens */
+@media (max-width: 767px) {
+  /* Center align the buttons and stack vertically */
+  .custom-nav-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem; /* Add vertical spacing */
+  }
+
+  /* Add width and margin adjustments for buttons */
+  .custom-nav-buttons, .btn, .btn-primary {
+    width: 100%; /* Full-width buttons */
+    margin-bottom: 0.5rem; /* Add vertical spacing */
+  }
+
+  /* Center-align toggle switches */
+  .custom-toggle-switches {
+    justify-content: center;
+    width: 100%;
+  }
+}

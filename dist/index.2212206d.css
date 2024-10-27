@@ -10982,7 +10982,13 @@ button:not(:disabled), [type="button"]:not(:disabled), [type="reset"]:not(:disab
   }
 }
 
-x .btn {
+body {
+  color: #212529;
+  background-color: #fff;
+  font-family: Lato, sans-serif;
+}
+
+.btn {
   color: #212529;
   text-align: center;
   vertical-align: middle;
@@ -11007,6 +11013,14 @@ x .btn {
   margin: 0 3px !important;
 }
 
+.btn-outline-primary {
+  color: #997dff !important;
+  background-color: #fff !important;
+  border-color: #997dff !important;
+  border-radius: 50rem !important;
+  margin: 0 3px !important;
+}
+
 .btn-secondary {
   color: #000 !important;
   background-color: #85bfb6 !important;
@@ -11015,7 +11029,7 @@ x .btn {
   margin: 0 3px !important;
 }
 
-.btn-outline-primary {
+.btn-outline-secondary {
   color: #85bfb6 !important;
   background-color: #fff !important;
   border-color: #85bfb6 !important;
@@ -11023,12 +11037,34 @@ x .btn {
   margin: 0 3px !important;
 }
 
-.btn-black {
+.btn-black-purple {
   color: #997dff !important;
   background-color: #000 !important;
   border-color: #997dff !important;
   border-radius: 50rem !important;
   margin: 0 3px !important;
+}
+
+.btn-black-green {
+  color: #85bfb6 !important;
+  background-color: #000 !important;
+  border-color: #85bfb6 !important;
+  border-radius: 50rem !important;
+  margin: 0 3px !important;
+}
+
+.btn-small-tech {
+  border: none;
+  margin: 2px;
+  font-size: .7rem;
+  color: #fff !important;
+  background-color: #000 !important;
+  border-radius: 50rem !important;
+  margin: 0 3px !important;
+}
+
+.custom-navbar .custom-nav-buttons .nav-item {
+  margin-bottom: .5rem;
 }
 
 .bd-placeholder-img {
@@ -11120,6 +11156,25 @@ x .btn {
 
 .bd-mode-toggle .dropdown-menu .active .bi {
   display: block !important;
+}
+
+@media (width <= 767px) {
+  .custom-nav-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: .5rem;
+    display: flex;
+  }
+
+  .custom-nav-buttons, .btn, .btn-primary {
+    width: 100%;
+    margin-bottom: .5rem;
+  }
+
+  .custom-toggle-switches {
+    justify-content: center;
+    width: 100%;
+  }
 }
 
 :root, [data-bs-theme="light"] {

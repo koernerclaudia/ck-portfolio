@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { CareerFoundry } from '../careerfoundry/careerfoundry';
+import { AboutMe } from '../AboutMe/AboutMe';
 import ChartsOverviewDemo from '../skills/skills';
 import { NavBar } from '../navbar/navbar';
 import { Footer } from '../footer/footer';
@@ -8,6 +8,7 @@ import { Hero } from '../hero/hero';
 import { Tools } from '../tools/tools';
 import Sample from '../sample/sample';
 import ItemDetail from '../project/project'; // Import the new ItemDetail component
+import { Ambition } from '../ambition/ambition';
 
 export const Main = () => {
   return (
@@ -20,10 +21,11 @@ export const Main = () => {
           element={
             <>
               <Hero />
+              <Ambition />
               <Sample />
               <ChartsOverviewDemo />
               <Tools />
-              <CareerFoundry />
+              <AboutMe />
               <Footer />
             </>
           }
