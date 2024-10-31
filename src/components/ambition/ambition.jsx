@@ -16,7 +16,7 @@ export const Ambition = () => {
             
           </div>
           <div className="col-lg-6 py-3">
-            <h1 className="display-5 fw-bold text-body-emphasis lh-2 mb-4 text-center"><span className="special-black">Full Stack </span>Training</h1>
+            <h1 className="display-5 fw-bold text-body-emphasis lh-2 mb-4 text-center"><span className="special-black">Full Stack </span>Trained</h1>
             <p className="lead">During the summer of 2024 I absolved a<br></br>Full Stack Web Development Training with<br></br> CareerFoundry (DEKRA, ...). </p>
             <p className="lead">I did this to build upon my previous<br></br> Web Skills in HTML & CSS (CIW) and turn<br></br>Web Development into a full time career.</p>
            

@@ -1,4 +1,21 @@
-{
+
+
+{    "name": "porfolio",
+"version": "1.0.0",
+"main": "index.js",
+"homepage": "https://koernerclaudia.github.io/Portfolio",
+"keywords": [],
+"author": "",
+"license": "ISC",
+"description": "",
+"proxy": "https://api.airtable.com",
+"scripts": {
+  "start": "parcel index.html",
+  "test": "echo \"Error: no test specified\" && exit 1",
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d dist",
+  "build": "parcel build index.html --dist-dir dist"
+},
   "dependencies": {
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
@@ -33,6 +50,7 @@
     "process": "^0.11.10",
     "tota11y": "^0.1.6"
   },
+
   "parcel": {
     "jsc": {
       "transform": {
@@ -41,16 +59,5 @@
         }
       }
     }
-  },
-  "name": "porfolio",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
-  "proxy": "https://api.airtable.com"
+  }
 }
