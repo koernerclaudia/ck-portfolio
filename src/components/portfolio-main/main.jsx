@@ -9,6 +9,9 @@ import { Tools } from '../tools/tools';
 import Sample from '../sample/sample';
 import ItemDetail from '../project/project'; // Import the new ItemDetail component
 import { Ambition } from '../ambition/ambition';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+// import "../../index.scss";
 
 export const Main = () => {
   return (

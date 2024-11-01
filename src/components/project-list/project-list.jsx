@@ -1,7 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import Masonry from 'masonry-layout';
-import "../../index.scss";
+// import "../../index.scss";
 
 export const ProjectList = () => {
   const masonryRef = useRef(null);

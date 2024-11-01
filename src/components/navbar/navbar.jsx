@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import Nav from "react-bootstrap/Nav";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-import "../../index.scss";
-import "./navbar.scss";
+import { Link as ScrollLink } from "react-scroll"; // For scrolling to sections
+// import "../../index.scss";
 
 export const NavBar = () => {
   const [language, setLanguage] = useState("EN");
@@ -24,14 +24,10 @@ export const NavBar = () => {
 
   return (
     <div className="container">
-      <Nav className="navbar navbar-expand-lg navbar-white bg-white py-3 mb-2">
+      <Nav className="navbar navbar-expand-md navbar-white bg-white py-3 sticky-top">
         <div className="container-fluid">
-          {/* Brand / Header Title */}
-          
-  
-
-          {/* Right Side Toggle Switches */}
-          <div className="d-flex align-items-center ms-auto">
+       
+        <div className="d-flex align-items-center me-auto ms-md-auto">
             <div className="form-check form-switch me-3">
               <input 
                 className="form-check-input" 
@@ -73,25 +69,35 @@ export const NavBar = () => {
             <span className="navbar-toggler-icon"></span>
           </button>
 
-          {/* Collapsible Menu Content */}
+
           <div className="collapse navbar-collapse" id="navbarNav">
-            {/* Navigation Buttons */}
-            <ul className="navbar-nav ms-auto mb-2 mb-lg-0 custom-nav-buttons">
-              <li className="nav-item">
-                <button className="btn btn-outline-primary">{language === "EN" ? "Home" : "Startseite"}</button>
-              </li>
-              <li className="nav-item">
-                <button className="btn btn-primary">{language === "EN" ? "Projects" : "Projekte"}</button>
-              </li>
-              <li className="nav-item">
-                <button className="btn btn-primary">{language === "EN" ? "Skills" : "Fähigkeiten"}</button>
-              </li>
-              <li className="nav-item">
-                <button className="btn btn-outline-primary">{language === "EN" ? "Tools" : "Werkzeuge"}</button>
-              </li>
-              <li className="nav-item">
-                <button className="btn btn-outline-primary">{language === "EN" ? "About me" : "Über mich"}</button>
-              </li>
+          
+            <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li className="nav-item custom-nav-buttons">
+            <ScrollLink to="home" smooth={true} duration={500} className="btn btn-outline-primary">
+              {language === "EN" ? "Home" : "Startseite"}
+            </ScrollLink>
+          </li>
+          <li className="nav-item custom-nav-buttons">
+            <ScrollLink to="projects" smooth={true} duration={500} className="btn btn-primary">
+              {language === "EN" ? "Projects" : "Projekte"}
+            </ScrollLink>
+          </li>
+          <li className="nav-item custom-nav-buttons">
+            <ScrollLink to="skills" smooth={true} duration={500} className="btn btn-primary">
+              {language === "EN" ? "Skills" : "Fähigkeiten"}
+            </ScrollLink>
+          </li>
+          <li className="nav-item custom-nav-buttons">
+            <ScrollLink to="tools" smooth={true} duration={500} className="btn btn-outline-primary">
+              {language === "EN" ? "Tools" : "Tools"}
+            </ScrollLink>
+          </li>
+          <li className="nav-item custom-nav-buttons">
+            <ScrollLink to="aboutme" smooth={true} duration={500} className="btn btn-outline-primary">
+              {language === "EN" ? "About Me" : "Über mich"}
+            </ScrollLink>
+          </li>
             </ul>
           </div>
         </div>

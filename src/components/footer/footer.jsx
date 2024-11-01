@@ -1,6 +1,7 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import "../../index.scss";
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+// import "../../index.scss";
 import { faHeart, faCoffee } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
