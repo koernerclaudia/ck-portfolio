@@ -1,3 +1,17 @@
+
+
+
+
+
+
+.bd-mode-toggle {
+  z-index: 1500;
+}
+
+.bd-mode-toggle .dropdown-menu .active .bi {
+  display: block !important;
+}
+
 .masonry-grid {
     display: flex;
     width: auto; /* Use auto or width of parent */
@@ -19,7 +33,6 @@
     padding: 10px;
     transition: transform 0.2s;
     overflow: auto;
-    height: auto;
   }
   
   .card:hover {

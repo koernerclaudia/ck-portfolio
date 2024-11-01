@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "../sample/sample.scss";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+// import "../sample/sample.scss";
+// import '../../index.scss';
+import { Link } from "react-scroll";
+
 
 const Sample = () => {
   const [records, setRecords] = useState([]);
@@ -54,7 +57,7 @@ const Sample = () => {
   }, []);
 
   return (
-    <div className='px-4 py-2 my-5'>
+    <div className='px-4 py-2 my-5' id="projects">
       <div className="container">
          <h1 className="display-5 fw-bold text-body-emphasis text-center">Training<span className="special-purple"> Projects</span></h1>
         <div className="row row-cols-1 row-cols-md-3 g-4 py-5">

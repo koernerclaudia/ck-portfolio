@@ -1,51 +1,52 @@
 import * as React from 'react';
-// import "../../index.scss";
 import { BarChart } from '@mui/x-charts/BarChart';
-import 'bootstrap/dist/css/bootstrap.min.css'; // Make sure Bootstrap CSS is imported
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+// import "../../index.scss";
 
 export default function ChartsOverviewDemo() {
   // Define your chart data in a JSON format
   const chartData = [
     {
       title: "Meta & Programming Languages",
-      labels: ['HTML', 'CSS', 'JavaScript'],
-      values: [80, 70, 40],
+      labels: ['HTML','Javascript', 'Vanilla JS', 'TypeScript'],
+      values: [90, 70, 70, 50],
       color: '#997dff'
     },
     {
       title: "Frontend Technologies",
-      labels: ['React', 'Angular', 'Vue'],
+      labels: ['React', 'Angular', 'HTML5'],
       values: [60, 50, 70],
       color: '#EFBCD5'
     },
     {
       title: "Backend Technologies",
-      labels: ['Node.js', 'Python', 'Ruby'],
-      values: [90, 80, 50],
+      labels: ['Node.js', 'MongoDB', 'Express', 'AWS', 'RestAPI', 'Firebase'],
+      values: [65, 70, 50, 30, 65, 40],
       color: '#85BFB6'
     },
     {
-      title: "Agile Practises",
-      labels: ['Java', 'C#', 'PHP'],
+      title: "Styling",
+      labels: ['CSS', 'SCSS#', 'Sass', 'Bootstrap'],
       values: [70, 60, 80],
       color: '#528A8F'
     },
     {
       title: "UI Design",
-      labels: ['Swift', 'Go', 'Kotlin'],
+      labels: ['Figma', 'Illustrator', 'Photoshop'],
       values: [75, 85, 90],
       color: '#BE97C6'
     },
     {
       title: "NoCode Tools",
-      labels: ['Swift', 'Go', 'Kotlin'],
-      values: [75, 85, 90],
+      labels: ['Softr', 'Airtable', 'Made'],
+      values: [80, 80, 40],
       color: '#D7C6F3'
     },
   ];
 
   return (
-    <div className='px-4 py-5 my-5 text-center border-top'>
+    <div className='px-4 py-5 my-5 text-center border-top' id="skills">
     <div className="container">
        <h1 className="display-5 fw-bold text-body-emphasis"><span className="special-black">Knowledge </span>&amp; Skills</h1>
        <p className="lead mb-4">These are the tools, frameworks, libraries, programming & meta languages and more that I have been training on...</p>

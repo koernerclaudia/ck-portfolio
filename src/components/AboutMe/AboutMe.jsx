@@ -1,11 +1,13 @@
 import React from "react";
-import "../../index.scss";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+// import "../../index.scss";
 
 
 
 export const AboutMe = () => {
   return (
-    <div className='px-4 py-2 my-5'>
+    <div className='px-4 py-2 my-5' id="aboutme">
     <div className="container">
        <h1 className="display-5 fw-bold text-body-emphasis text-center">Career <span className="special-purple">Background</span></h1>
     <div className="row g-4 py-5 row-cols-1 row-cols-lg-3 ">
