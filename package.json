@@ -9,11 +9,11 @@
     "description": "",
     "proxy": "https://api.airtable.com",
     "scripts": {
-        "start": "parcel index.html",
+        "start": "parcel src/index.html",
         "test": "echo \"Error: no test specified\" && exit 1",
         "predeploy": "npm run build",
         "deploy": "gh-pages -d dist",
-        "build": "parcel build index.html --dist-dir dist"
+        "build": "parcel build src/index.html --dist-dir dist"
     },
     "dependencies": {
         "@emotion/react": "^11.13.3",
