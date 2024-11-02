@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AboutMe } from '../AboutMe/AboutMe';
 import ChartsOverviewDemo from '../skills/skills';
 import { NavBar } from '../navbar/navbar';
@@ -12,11 +12,10 @@ import { Ambition } from '../ambition/ambition';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 // import "../../index.scss";
-import { HashRouter as Router } from "react-router-dom";
 
 export const Main = () => {
   return (
-    <Router>
+    <BrowserRouter basename="/Portfolio">
       <NavBar />
       <Routes>
         {/* Route for the main page */}
@@ -38,6 +37,6 @@ export const Main = () => {
         {/* Route for individual item detail pages */}
         <Route path="/item/:id" element={<ItemDetail />} />
       </Routes>
-    </Router>
+    </BrowserRouter>
   );
 };
