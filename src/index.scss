@@ -3,6 +3,7 @@
 
 * {
   box-sizing: border-box;
+  margin: auto
  
 }
 
@@ -21,10 +22,6 @@ body {
 
 .mainbox {
   margin: 0 70px;
-}
-
-.margin-less {
-  margin: 0 3px;
 }
 
 .btn {
@@ -145,7 +142,7 @@ body {
 .custom-nav-buttons, .btn, .btn-primary, .btn-outline-primary, .btn-secondary, .btn-outline-secondary {
   margin: auto;
   align-self: center;
-  width: auto; 
+  width: 100%; 
   margin-bottom: 1rem; /* Add vertical spacing */
   gap: 0.5rem; /* Add vertical spacing */
   font-size: 1rem;
@@ -166,6 +163,16 @@ body {
 /* Style for small screens */
 @media all and (max-width: 500px) {
 
+  body {
+    font-family: 'Lato', sans-serif;
+    background-color: #ffffff;
+    color: #212529;
+  }
+  
+  .mainbox {
+    margin: 0 5px;
+  }
+
 
   /* Center align the buttons and stack vertically */
   .custom-nav-buttons {
@@ -178,7 +185,7 @@ body {
   .custom-nav-buttons, .btn, .btn-primary, .btn-outline-primary, .btn-secondary, .btn-outline-secondary {
     margin: auto;
     align-self: center;
-    width: auto; 
+    width: 100%;
     margin-bottom: 1rem; /* Add vertical spacing */
     gap: 0.8rem; /* Add vertical spacing */
     font-size: 1rem;

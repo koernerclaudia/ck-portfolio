@@ -73,7 +73,7 @@ export const NavBar = () => {
           <div className="collapse navbar-collapse" id="navbarNav">
           
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-          <li className="nav-item custom-nav-buttons">
+          <li className="nav-item custom-nav-buttons mt-5">
             <ScrollLink to="home" smooth={true} duration={500} className="btn btn-outline-primary">
               {language === "EN" ? "Home" : "Startseite"}
             </ScrollLink>

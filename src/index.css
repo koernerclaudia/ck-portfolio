@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
 * {
   box-sizing: border-box;
+  margin: auto;
 }
 
 body {
@@ -11,10 +12,6 @@ body {
 
 .mainbox {
   margin: 0 70px;
-}
-
-.margin-less {
-  margin: 0 3px;
 }
 
 .btn {
@@ -124,7 +121,7 @@ body {
   .custom-nav-buttons, .btn, .btn-primary, .btn-outline-primary, .btn-secondary, .btn-outline-secondary {
     margin: auto;
     align-self: center;
-    width: auto;
+    width: 100%;
     margin-bottom: 1rem; /* Add vertical spacing */
     gap: 0.5rem; /* Add vertical spacing */
     font-size: 1rem;
@@ -141,6 +138,14 @@ body {
 }
 /* Style for small screens */
 @media all and (max-width: 500px) {
+  body {
+    font-family: "Lato", sans-serif;
+    background-color: #ffffff;
+    color: #212529;
+  }
+  .mainbox {
+    margin: 0 5px;
+  }
   /* Center align the buttons and stack vertically */
   .custom-nav-buttons {
     display: flex;
@@ -151,7 +156,7 @@ body {
   .custom-nav-buttons, .btn, .btn-primary, .btn-outline-primary, .btn-secondary, .btn-outline-secondary {
     margin: auto;
     align-self: center;
-    width: auto;
+    width: 100%;
     margin-bottom: 1rem; /* Add vertical spacing */
     gap: 0.8rem; /* Add vertical spacing */
     font-size: 1rem;
