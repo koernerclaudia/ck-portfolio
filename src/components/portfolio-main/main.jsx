@@ -15,7 +15,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 export const Main = () => {
   return (
-    <BrowserRouter basename="/Portfolio">
+    <Router basename="/Portfolio">
       <NavBar />
       <Routes>
         {/* Route for the main page */}
@@ -37,6 +37,6 @@ export const Main = () => {
         {/* Route for individual item detail pages */}
         <Route path="/item/:id" element={<ItemDetail />} />
       </Routes>
-    </BrowserRouter>
+    </Router>
   );
 };
