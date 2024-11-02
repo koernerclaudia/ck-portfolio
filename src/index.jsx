@@ -4,7 +4,6 @@ import { Main } from "./components/portfolio-main/main";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 // import "./index.scss";
-import { HashRouter as Router } from "react-router-dom";
 
 
 
