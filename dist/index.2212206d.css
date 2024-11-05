@@ -13346,6 +13346,10 @@ body {
   margin: 0 70px;
 }
 
+.MuiAxis-label {
+  font-size: 2px !important;
+}
+
 .btn {
   color: #212529;
   text-align: center;
@@ -13368,7 +13372,7 @@ body {
   background-color: #997dff !important;
   border-color: #997dff !important;
   border-radius: 50rem !important;
-  margin: 2px 3px !important;
+  margin: 4px !important;
 }
 
 .btn-outline-primary {
@@ -13376,7 +13380,7 @@ body {
   background-color: #fff !important;
   border-color: #997dff !important;
   border-radius: 50rem !important;
-  margin: 0 3px !important;
+  margin: 4px !important;
 }
 
 .btn-secondary {
@@ -13384,7 +13388,7 @@ body {
   background-color: #85bfb6 !important;
   border-color: #85bfb6 !important;
   border-radius: 50rem !important;
-  margin: 0 3px !important;
+  margin: 4px !important;
 }
 
 .btn-outline-secondary {
@@ -13392,7 +13396,7 @@ body {
   background-color: #fff !important;
   border-color: #85bfb6 !important;
   border-radius: 50rem !important;
-  margin: 0 3px !important;
+  margin: 4px !important;
 }
 
 .btn-black-purple {
@@ -13400,7 +13404,7 @@ body {
   background-color: #000 !important;
   border-color: #997dff !important;
   border-radius: 50rem !important;
-  margin: 0 3px !important;
+  margin: 4px !important;
 }
 
 .btn-black-green {
@@ -13408,12 +13412,12 @@ body {
   background-color: #000 !important;
   border-color: #85bfb6 !important;
   border-radius: 50rem !important;
-  margin: 0 3px !important;
+  margin: 4px !important;
 }
 
 .btn-small-tech {
   border: none;
-  margin: 2px;
+  margin: 4px;
   font-size: .7rem;
   color: #fff !important;
   background-color: #000 !important;
@@ -13440,7 +13444,17 @@ body {
   font-style: italic;
 }
 
+@media (width >= 769px) and (width <= 1000px) {
+  .mainbox {
+    margin: 0 5px;
+  }
+}
+
 @media (width >= 501px) and (width <= 768px) {
+  .mainbox {
+    margin: 0 5px;
+  }
+
   .custom-nav-buttons {
     flex-direction: column;
     align-items: center;
@@ -13467,12 +13481,6 @@ body {
 }
 
 @media (width <= 500px) {
-  body {
-    color: #212529;
-    background-color: #fff;
-    font-family: Lato, sans-serif;
-  }
-
   .mainbox {
     margin: 0 5px;
   }
@@ -13500,5 +13508,44 @@ body {
     flex: 0 0 100%;
     max-width: 100%;
   }
+}
+
+.bd-mode-toggle {
+  z-index: 1500;
+}
+
+.bd-mode-toggle .dropdown-menu .active .bi {
+  display: block !important;
+}
+
+.masonry-grid {
+  width: auto;
+  display: flex;
+}
+
+.grid-sizer {
+  width: 33.333%;
+}
+
+.grid-item {
+  margin-bottom: 30px;
+  margin-left: 5px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 10px;
+  transition: transform .2s;
+  overflow: auto;
+  box-shadow: 0 2px 5px #0000001a;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card-text {
+  overflow: auto;
 }
 /*# sourceMappingURL=index.2212206d.css.map */

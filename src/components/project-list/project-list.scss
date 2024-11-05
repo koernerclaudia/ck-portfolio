@@ -1,0 +1,56 @@
+
+
+
+
+
+
+.bd-mode-toggle {
+  z-index: 1500;
+}
+
+.bd-mode-toggle .dropdown-menu .active .bi {
+  display: block !important;
+}
+
+.masonry-grid {
+    display: flex;
+    width: auto; /* Use auto or width of parent */
+  }
+  
+  .grid-sizer {
+    width: 33.333%; /* 3 equal columns */
+  }
+  
+  .grid-item {
+    margin-left: 5px; /* Adjust gutter size */
+    margin-bottom: 30px; /* Space between rows */
+  }
+  
+  .card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    transition: transform 0.2s;
+    overflow: auto;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+  }
+  
+//   .card-body {
+//     height: auto;
+//     overflow: hidden; /* Hide any overflowing content */
+//   }
+  
+//   .card-title {
+//     overflow: hidden;
+//     text-overflow: ellipsis; /* Add ellipsis for overflow text */
+//     white-space: nowrap; /* Prevent text from wrapping to the next line */
+//   }
+  
+  .card-text {
+   overflow: auto;
+  }
+  
