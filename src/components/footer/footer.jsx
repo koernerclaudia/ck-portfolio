@@ -4,6 +4,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 // import "../../index.scss";
 import { faHeart, faCoffee } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub, faInstagram, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 
 export const Footer = () => {
@@ -11,18 +12,18 @@ export const Footer = () => {
     <div className="border-top">
      <div className="container" >
   <div className="d-flex flex-wrap justify-content-between align-items-center py-3 my-4">
-    <p className="col-md-4 mb-0" style={{color: "#212529"}}>Made in 2024 with loads of <FontAwesomeIcon style={{color: "#997dff"}} icon={faCoffee} />&nbsp; & <FontAwesomeIcon style={{color: "#997dff"}} icon={faHeart} />.</p>
+    <p className="col-md-4 col-sm-12 mb-0" style={{color: "#212529"}}>Made in 2024 with loads of <FontAwesomeIcon style={{color: "#997dff"}} icon={faCoffee} />&nbsp; & <FontAwesomeIcon style={{color: "#997dff"}} icon={faHeart} />.</p>
 
-    <a href="/" className="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-      <svg className="bi me-2" width="40" height="32"></svg>
+    <a href="/" className="col-md-4 col-sm-12 d-flex align-items-start justify-content-start link-body-emphasis text-decoration-none">
+      <svg width="40" height="32"><FontAwesomeIcon style={{color: "#997dff"}} icon={faGithub} /></svg>
+      <svg  width="40" height="32"><FontAwesomeIcon style={{color: "#997dff"}} icon={faInstagram} /></svg>
+      <svg  width="40" height="32"><FontAwesomeIcon style={{color: "#997dff"}} icon={faLinkedin} /></svg>
     </a>
 
-    <ul className="nav col-md-4 justify-content-end">
-      <li className="nav-item"><a href="#" className="nav-link px-2 text-body-secondary">Home</a></li>
-      <li className="nav-item"><a href="#" className="nav-link px-2 text-body-secondary">Features</a></li>
-      <li className="nav-item"><a href="#" className="nav-link px-2 text-body-secondary">Pricing</a></li>
-      <li className="nav-item"><a href="#" className="nav-link px-2 text-body-secondary">FAQs</a></li>
-      <li className="nav-item"><a href="#" className="nav-link px-2 text-body-secondary">Email me</a></li>
+    <ul className="nav col-md-4 col-sm-12 justify-content-end">
+ 
+      <li className="nav-item"><a href="#" className="nav-link px-2 text-body-secondary">Legal Stuff</a></li>
+      <li className="nav-item"><a href="#" className="nav-link px-2 text-body-secondary">Impressum</a></li>
     </ul>
   </div>
 </div>

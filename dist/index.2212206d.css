@@ -13368,7 +13368,7 @@ body {
 }
 
 .btn-primary {
-  color: #000 !important;
+  color: #212529 !important;
   background-color: #997dff !important;
   border-color: #997dff !important;
   border-radius: 50rem !important;
@@ -13384,7 +13384,7 @@ body {
 }
 
 .btn-secondary {
-  color: #000 !important;
+  color: #212529 !important;
   background-color: #85bfb6 !important;
   border-color: #85bfb6 !important;
   border-radius: 50rem !important;
@@ -13401,7 +13401,7 @@ body {
 
 .btn-black-purple {
   color: #997dff !important;
-  background-color: #000 !important;
+  background-color: #212529 !important;
   border-color: #997dff !important;
   border-radius: 50rem !important;
   margin: 4px !important;
@@ -13409,7 +13409,7 @@ body {
 
 .btn-black-green {
   color: #85bfb6 !important;
-  background-color: #000 !important;
+  background-color: #212529 !important;
   border-color: #85bfb6 !important;
   border-radius: 50rem !important;
   margin: 4px !important;
@@ -13420,9 +13420,17 @@ body {
   margin: 4px;
   font-size: .7rem;
   color: #fff !important;
-  background-color: #000 !important;
+  background-color: #212529 !important;
   border-radius: 50rem !important;
   margin: 0 3px !important;
+}
+
+.btn:hover {
+  color: #212529 !important;
+  background-color: #fff !important;
+  border-color: #212529 !important;
+  border-radius: 50rem !important;
+  margin: 4px !important;
 }
 
 .bd-placeholder-img {
@@ -13439,7 +13447,7 @@ body {
 }
 
 .special-black {
-  color: #000;
+  color: #212529;
   font-family: Playfair Display;
   font-style: italic;
 }
