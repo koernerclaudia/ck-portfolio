@@ -1,0 +1,31 @@
+/* Style for small screens */
+@media all and (max-width: 500px) {
+
+    .mainbox {
+      margin: 0 5px;
+    }
+  
+    /* Center align the buttons and stack vertically */
+    .custom-nav-buttons {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+     }
+
+  
+     .col {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  
+/* Add width and margin adjustments for buttons */
+.random-button-grid btn, .btn, .btn-primary, .btn-outline-primary, .btn-secondary, .btn-outline-secondary {
+    flex: 0 1 calc(50% - 1rem); /* 2 buttons per row with gap consideration */
+    // margin: auto;
+    // align-self: center;
+    // margin-bottom: 1rem; /* Add vertical spacing */
+    // gap: 0.5rem; /* Add vertical spacing */
+    // font-size: 1rem;
+  }
+}
+  

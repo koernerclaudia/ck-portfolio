@@ -2,6 +2,7 @@ import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import "../../index.scss"; // If you have custom styles
+// import "../tools/tools.scss"; // If you have custom styles
 import { useEffect, useState } from "react";
 import axios from "axios";
 
@@ -68,21 +69,22 @@ export const Tools = () => {
 
   return (
     <>
-      <div className="px-4 py-5 my-5 text-center mb-5" style={{ backgroundColor: "#f3eefa" }} id="tools">
-        <h1 className="display-5 fw-bold text-body-emphasis">Tools & <span className="special-black">Technologies</span></h1>
-        <div className="col-lg-8 mx-auto">
-          <p className="lead mb-4">These are the tools, frameworks, libraries, programming & meta languages and more that I have been training on...</p>
-          <div className="d-grid d-sm-flex justify-content-sm-center flex-wrap">
-            {toolsData.map((tool, index) => (
-              <a key={index} href={tool.link} target="_blank" rel="noopener noreferrer">
-                <button type="button" className={`btn btn-${tool.type} px-4 gap-1 m-2`}>
-                  {tool.name}
-                </button>
-              </a>
-            ))}
-          </div>
-        </div>
-      </div>
+   <div className="px-4 py-5 my-5 text-center mb-5" style={{ backgroundColor: "#f3eefa" }} id="tools">
+  <h1 className="display-5 fw-bold text-body-emphasis">Tools & <span className="special-black">Technologies</span></h1>
+  <div className="col-lg-8 col-md-8 col-sm-8 col-xs-12 mx-auto">
+    <p className="lead mb-4">These are the tools, frameworks, libraries, programming & meta languages and more that I have been training on...</p>
+    <div className="random-button-grid">
+      {toolsData.map((tool, index) => (
+        <a key={index} href={tool.link} target="_blank" rel="noopener noreferrer">
+          <button type="button" className={`btn btn-${tool.type} px-4 gap-1 m-2`} >
+            {tool.name}
+          </button>
+        </a>
+      ))}
+    </div>
+  </div>
+</div>
+
     </>
   );
 };
