@@ -17,19 +17,19 @@ export const Hero = () => {
             <img src={myHeader} className="d-block mx-md-auto" alt="Bootstrap Themes" width="400" loading="lazy" />
           </div>
           <div className="col-12 col-sm-6 py-4">
-            <h1 className="display-5 fw-bold text-body-emphasis lh-2 mb-3" style={{ fontSize: 'clamp(2rem, 3.5vw, 4rem)' }}>Claudia's  <span className="special-purple">Full&nbsp;Stack</span> Project&nbsp;Portfolio</h1>
-            <p className="lead" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.5rem)' }}>This site showcases some my web & app projects I set up during, mainly during my Full Stack Development Training in summer of 2024. Enjoy browsing!</p>
-            <div className="d-flex flex-wrap justify-content-center justify-content-md-start">
-  <a href="https://koernerclaudia.com" target="_blank">
-    <button type="button" className="btn btn-primary btn-md px-3 me-2 mb-2 fs-6 fs-md-5">My Website</button>
-  </a>
+            <h1 className="display-5 fw-bold text-body-emphasis lh-2 mb-3" style={{ fontSize: 'clamp(2.5rem, 3.5vw, 4rem)' }}>Claudia's  <span className="special-purple">Full&nbsp;Stack</span> Project&nbsp;Portfolio</h1>
+            <p className="lead" style={{ fontSize: 'clamp(1.2rem, 2.5vw, 1.5rem)', marginBottom: '30px' }}>This is a collection of my web projects across the years. Enjoy browsing!</p>
+            <div>
+  {/* <a href="https://koernerclaudia.com" target="_blank">
+    <button type="button" className="btn btn-primary btn-md px-3 me-2 mb-2 fs-6 fs-sm-5">My Website</button>
+  </a> */}
   <a href="https://www.linkedin.com/in/claudiakoerner81/" target="_blank">
-    <button type="button" className="btn btn-black-green btn-md px-3 me-2 mb-2 fs-6 fs-md-5">
+    <button type="button" className="btn btn-black-purple btn-md px-3 me-2 mb-2 fs-6 fs-sm-5">
       <FontAwesomeIcon icon={faLinkedin} />&nbsp;&nbsp;LinkedIn
     </button>
   </a>
   <a href="https://github.com/koernerclaudia" target="_blank">
-    <button type="button" className="btn btn-black-purple btn-md px-3 mb-2 fs-6 fs-md-5">
+    <button type="button" className="btn btn-black-purple btn-md px-3 mb-2 fs-6 fs-sm-5">
       <FontAwesomeIcon icon={faGithub} />&nbsp;&nbsp;Github
     </button>
   </a>

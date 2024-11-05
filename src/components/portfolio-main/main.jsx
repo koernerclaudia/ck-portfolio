@@ -6,7 +6,7 @@ import { NavBar } from '../navbar/navbar';
 import { Footer } from '../footer/footer';
 import { Hero } from '../hero/hero';
 import { Tools } from '../tools/tools';
-import Sample from '../sample/sample';
+import ProjectList from '../project-list/project-list';
 import ItemDetail from '../project/project'; // Import the new ItemDetail component
 import { Ambition } from '../ambition/ambition';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -15,7 +15,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 export const Main = () => {
   return (
-    <Router basename="/Portfolio">
+    <Router>
       <NavBar />
       <Routes>
         {/* Route for the main page */}
@@ -25,7 +25,7 @@ export const Main = () => {
             <>
               <Hero />
               <Ambition />
-              <Sample />
+              <ProjectList />
               <ChartsOverviewDemo />
               <Tools />
               <AboutMe />

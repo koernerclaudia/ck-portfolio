@@ -1,7 +1,7 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-// import "../../index.scss"; // If you have custom styles
+import "../../index.scss"; // If you have custom styles
 import { useEffect, useState } from "react";
 import axios from "axios";
 
@@ -43,12 +43,14 @@ export const Tools = () => {
 
         const data = await response.json();
 
-        // Map the data to the desired structure
-        const fetchedTools = data.records.map((record) => ({
-          name: record.fields.TechStack || "Unknown", // Fallback for TechStack
-          link: record.fields.Link || "#", // Fallback if Link is not available
-          type: buttonClassMap[record.fields.PrimaryGroup?.toLowerCase()] || "primary", // Use the mapping for button type
-        }));
+       // Data mapping with Toolbox filter
+       const fetchedTools = data.records
+       .filter((record) => record.fields.ToolCloud === true) // Only include records where Toolbox is checked
+       .map((record) => ({
+         name: record.fields.TechStack || "Unknown", // Fallback for TechStack
+         link: record.fields.Link || "#", // Fallback if Link is not available
+         type: buttonClassMap[record.fields.PrimaryGroup?.toLowerCase()] || "primary", // Use the mapping for button type
+       }));
 
         setToolsData(fetchedTools);
       } catch (error) {
@@ -73,7 +75,7 @@ export const Tools = () => {
           <div className="d-grid d-sm-flex justify-content-sm-center flex-wrap">
             {toolsData.map((tool, index) => (
               <a key={index} href={tool.link} target="_blank" rel="noopener noreferrer">
-                <button type="button" className={`btn btn-${tool.type} btn-md px-4 gap-1 m-2`}>
+                <button type="button" className={`btn btn-${tool.type} px-4 gap-1 m-2`}>
                   {tool.name}
                 </button>
               </a>

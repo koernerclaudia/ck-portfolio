@@ -1,114 +1,106 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-import Masonry from 'masonry-layout';
-// import "../../index.scss";
+import './project-list.scss';
+import '../../index.scss';
+import { Link } from "react-router-dom";
 
-export const ProjectList = () => {
-  const masonryRef = useRef(null);
+
+const ProjectList = () => {
+  const [records, setRecords] = useState([]);
+  const [techStackNames, setTechStackNames] = useState({});
+  const colors = ["#f3eefa"]; // add more colors as needed
 
   useEffect(() => {
-    const masonryInstance = new Masonry(masonryRef.current, {
-      itemSelector: '.grid-item',
-      percentPosition: true,
-    });
+    const fetchData = async () => {
+      try {
+        // Fetch records from CF-Training table
+        const response = await axios.get(
+          `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}/CF-Training`,
+          {
+            headers: {
+              Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_API_KEY}`,
+            },
+            params: {
+              sort: [{ field: "App#", direction: "asc" }]
+            },
+          }
+        );
+        setRecords(response.data.records);
 
-    // Cleanup function to destroy the Masonry instance when component unmounts
-    return () => {
-      masonryInstance.destroy();
+        // Extract all unique TechStack IDs to fetch their names
+        const techStackIds = [...new Set(response.data.records.flatMap(record => record.fields.TechStack || []))];
+
+        // Fetch Tech Stack names from Skills table
+        const techStackResponse = await axios.get(
+          `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}/Skills`,
+          {
+            headers: {
+              Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_API_KEY}`,
+            },
+            params: {
+              filterByFormula: `OR(${techStackIds.map(id => `RECORD_ID()='${id}'`).join(",")})`,
+            },
+          }
+        );
+
+        // Create a mapping of ID to Name for the TechStack items
+        const techStackNameMapping = {};
+        techStackResponse.data.records.forEach(record => {
+          techStackNameMapping[record.id] = record.fields.TechStack; // Assuming the field containing the name is called 'Name'
+        });
+        setTechStackNames(techStackNameMapping);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
     };
+
+    fetchData();
   }, []);
 
   return (
-    <main className="container py-5">
-    <h1>Bootstrap and Masonry</h1>
- 
-  
-    <div className="row" data-masonry='{"percentPosition": true }'>
-      <div className="col-sm-6 col-lg-4 mb-4">
-        <div className="card">
-          <svg className="bd-placeholder-img card-img-top" width="100%" height="200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text></svg>
-          <div className="card-body">
-            <h5 className="card-title">Card title that wraps to a new line</h5>
-            <p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          </div>
-        </div>
-      </div>
-      <div className="col-sm-6 col-lg-4 mb-4">
-        <div className="card p-3">
-          <figure className="p-3 mb-0">
-            <blockquote className="blockquote">
-              <p>A well-known quote, contained in a blockquote element.</p>
-            </blockquote>
-            <figcaption className="blockquote-footer mb-0 text-body-secondary">
-              Someone famous in <cite title="Source Title">Source Title</cite>
-            </figcaption>
-          </figure>
-        </div>
-      </div>
-      <div className="col-sm-6 col-lg-4 mb-4">
-        <div className="card">
-          <svg className="bd-placeholder-img card-img-top" width="100%" height="200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text></svg>
-          <div className="card-body">
-            <h5 className="card-title">Card title</h5>
-            <p className="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-            <p className="card-text"><small className="text-body-secondary">Last updated 3 mins ago</small></p>
-          </div>
-        </div>
-      </div>
-      <div className="col-sm-6 col-lg-4 mb-4">
-        <div className="card text-bg-primary text-center p-3">
-          <figure className="mb-0">
-            <blockquote className="blockquote">
-              <p>A well-known quote, contained in a blockquote element.</p>
-            </blockquote>
-            <figcaption className="blockquote-footer mb-0 text-white">
-              Someone famous in <cite title="Source Title">Source Title</cite>
-            </figcaption>
-          </figure>
-        </div>
-      </div>
-      <div className="col-sm-6 col-lg-4 mb-4">
-        <div className="card text-center">
-          <div className="card-body">
-            <h5 className="card-title">Card title</h5>
-            <p className="card-text">This card has a regular title and short paragraph of text below it.</p>
-            <p className="card-text"><small className="text-body-secondary">Last updated 3 mins ago</small></p>
-          </div>
-        </div>
-      </div>
-      <div className="col-sm-6 col-lg-4 mb-4">
-        <div className="card">
-          <svg className="bd-placeholder-img card-img" width="100%" height="260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Card image" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Card image</text></svg>
-        </div>
-      </div>
-      <div className="col-sm-6 col-lg-4 mb-4">
-        <div className="card p-3 text-end">
-          <figure className="mb-0">
-            <blockquote className="blockquote">
-              <p>A well-known quote, contained in a blockquote element.</p>
-            </blockquote>
-            <figcaption className="blockquote-footer mb-0 text-body-secondary">
-              Someone famous in <cite title="Source Title">Source Title</cite>
-            </figcaption>
-          </figure>
-        </div>
-      </div>
-      <div className="col-sm-6 col-lg-4 mb-4">
-        <div className="card">
-          <div className="card-body">
-            <h5 className="card-title">Card title</h5>
-            <p className="card-text">This is another card with title and supporting text below. This card has some additional content to make it slightly taller overall.</p>
-            <p className="card-text"><small className="text-body-secondary">Last updated 3 mins ago</small></p>
-          </div>
+    <div className='px-4 py-2 my-5' id="projects">
+      <div className="container">
+         <h1 className="display-5 fw-bold text-body-emphasis text-center"><span className="special-purple">Projects</span> so far</h1>
+        <div className="row row-cols-1 row-cols-md-3 g-4 py-5">
+          {records.map((record, index) => (
+            <div className="col" key={record.id}>
+              <div className="card h-100" style={{ backgroundColor: colors[index % colors.length] }}>
+                <img
+                  className="bd-placeholder-img card-img-top"
+                  src={record.fields.Image ? record.fields.Image[0].url : "#"}
+                  alt={record.fields.AppTitle || "Placeholder"}
+                  style={{ width: "100%", height: "200px", objectFit: "cover" }}
+                />
+                <div className="card-body">
+                  <h5 className="card-title">{record.fields.AppTitle}</h5>
+                  <p className="card-text">{record.fields.Blurb}</p>
+                  <p>
+  TechStack - Tools - Methodology:<br></br>{" "}
+  {(record.fields.TechStack || []).map(id => (
+    <button key={id} className="btn-small-tech">
+      {techStackNames[id] || id}
+    </button>
+  ))}
+</p>
+                  <Link to={`/item/${record.id}`} className="btn btn-primary mt-2">
+                    View Details
+                  </Link>
+                  <Link to={record.fields.GithubLink} className="btn btn-primary mt-2" target="_blank">
+                    Github
+                  </Link>
+                  <Link to={record.fields.LiveApp} className="btn btn-primary mt-2" target="_blank">
+                   Live App
+                  </Link>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>
-  
-  </main>
-       
   );
-}
+};
 
-
-
+export default ProjectList;
