@@ -8,6 +8,12 @@ body {
   font-family: "Lato", sans-serif;
   background-color: #ffffff;
   color: #212529;
+  overflow-x: hidden;
+  margin: auto;
+}
+
+.container {
+  width: 100% !important;
 }
 
 .mainbox {
@@ -160,6 +166,7 @@ body {
 @media all and (max-width: 500px) {
   .mainbox {
     margin: 0 5px;
+    min-width: 100%;
   }
   /* Center align the buttons and stack vertically */
   .custom-nav-buttons {
@@ -180,9 +187,5 @@ body {
   .custom-toggle-switches {
     justify-content: center;
     width: 100%;
-  }
-  .col {
-    flex: 0 0 100%;
-    max-width: 100%;
   }
 }/*# sourceMappingURL=index.css.map */

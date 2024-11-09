@@ -10,14 +10,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export const Hero = () => {
   return (
    
-    <div className="border-top" id="home">
-      <div className="col-xxl-8 container">
+    <div id="home">
+      <div className="col-xxl-8 col-sm-12 container">
         <div className="row flex-sm-row-reverse align-items-center g-5 px-4">
-          <div className="col-12 col-sm-6">
-            <img src={myHeader} className="d-block mx-md-auto" alt="Bootstrap Themes" width="400" loading="lazy" />
+          <div className=" col-12 col-sm-6 d-flex justify-content-center flex-shrink-0">
+            <img src={myHeader} className="d-block mx-md-auto img-fluid" loading="lazy" style={{maxWidth: "350px"}}/>
           </div>
-          <div className="col-12 col-sm-6 py-4">
-            <h1 className="display-5 fw-bold text-body-emphasis lh-2 mb-3" style={{ fontSize: 'clamp(2.5rem, 3.5vw, 4rem)' }}>Claudia's  <span className="special-purple">Full&nbsp;Stack</span> Project&nbsp;Portfolio</h1>
+          <div className="col-12 col-sm-6 py-4" minWidth="350px">
+            <h1 className="display-5 fw-bold text-body-emphasis lh-2 mb-3" style={{ fontSize: 'clamp(2.1rem, 3.5vw, 3.7rem)' }}>Claudia's  <span className="special-purple">Full&nbsp;Stack</span> Project&nbsp;Portfolio</h1>
             <p className="lead" style={{ fontSize: 'clamp(1.2rem, 2.5vw, 1.5rem)', marginBottom: '30px' }}>This is a collection of my web projects across the years. Enjoy browsing!</p>
             <div>
   {/* <a href="https://koernerclaudia.com" target="_blank">

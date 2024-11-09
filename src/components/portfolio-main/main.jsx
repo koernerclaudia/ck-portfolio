@@ -15,6 +15,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 export const Main = () => {
   return (
+    <div className='main'>
     <Router>
       <NavBar />
       <Routes>
@@ -38,5 +39,6 @@ export const Main = () => {
         <Route path="/item/:id" element={<ItemDetail />} />
       </Routes>
     </Router>
+    </div>
   );
 };
