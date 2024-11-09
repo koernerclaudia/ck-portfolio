@@ -82,14 +82,35 @@ const ItemDetail = () => {
 
             </p><hr></hr>
            
+            <p className="lead"> <strong>Project Objective:</strong> {record.fields.ProjectObjective}</p><hr></hr>
+            <p className="lead"> <strong>Key Features:</strong> {record.fields.KeyFeatures}</p><hr></hr>
+
             <p className="mt-3">
               
-              <Link to={record.GithubLink} className="btn btn-primary mt-2"> <FontAwesomeIcon icon={faGithub} />&nbsp;&nbsp;
-                Github
-              </Link>
-              <Link to={record.LiveApp} className="btn btn-primary mt-2">
-               Live App
-              </Link>
+           
+            {record.fields.GithubLink && (
+  <a
+    href={record.fields.GithubLink}
+    className="btn btn-primary mt-2"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <FontAwesomeIcon icon={faGithub} />&nbsp;&nbsp;Github
+  </a>
+)}
+
+{record.fields.LiveApp && (
+  <a
+    href={record.fields.LiveApp}
+    className="btn btn-primary mt-2"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Live App
+  </a>
+)}
+
+
         </p>
        
             <p className="lead">

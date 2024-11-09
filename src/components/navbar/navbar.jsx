@@ -5,6 +5,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import { Link as ScrollLink } from "react-scroll";
 import { Link, useLocation } from "react-router-dom";
 
+
 export const NavBar = () => {
   const [language, setLanguage] = useState("EN");
   const [theme, setTheme] = useState("light");
@@ -24,8 +25,9 @@ export const NavBar = () => {
   }, [theme]);
 
   return (
+    <div className=" border-bottom">
     <div className="container">
-      <Nav className="navbar navbar-expand-md navbar-white bg-white py-3">
+      <Nav className="navbar navbar-expand-md navbar-white bg-white py-3 w-100">
         <div className="container-fluid">
           <div className="d-flex align-items-center me-auto ms-md-auto">
             <div className="form-check form-switch me-3">
@@ -33,7 +35,7 @@ export const NavBar = () => {
                 className="form-check-input" 
                 type="checkbox" 
                 id="languageToggle" 
-                disabled={isDisabled}
+                // disabled={isDisabled}
                 onChange={handleLanguageToggle} 
                 checked={language === "DE"} 
               />
@@ -110,6 +112,7 @@ export const NavBar = () => {
           </div>
         </div>
       </Nav>
+    </div>
     </div>
   );
 };
