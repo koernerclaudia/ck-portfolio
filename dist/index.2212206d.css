@@ -24325,7 +24325,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 }
 
 .btn-primary {
-  color: #212529 !important;
+  color: #fff !important;
   background-color: #997dff !important;
   border-color: #997dff !important;
   border-radius: 50rem !important;

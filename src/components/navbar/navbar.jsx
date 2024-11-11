@@ -30,21 +30,21 @@ export const NavBar = () => {
       <Nav className="navbar navbar-expand-md navbar-white bg-white py-3 w-100">
         <div className="container-fluid">
           <div className="d-flex align-items-center me-auto ms-md-auto">
-            <div className="form-check form-switch me-3">
+            {/* <div className="form-check form-switch me-3">
               <input 
                 className="form-check-input" 
                 type="checkbox" 
                 id="languageToggle" 
-                // disabled={isDisabled}
+                disabled={isDisabled}
                 onChange={handleLanguageToggle} 
                 checked={language === "DE"} 
               />
               <label className="form-check-label" htmlFor="languageToggle">
                 {language === "EN" ? "EN" : "DE"}
               </label>
-            </div>
+            </div> */}
 
-            <div className="form-check form-switch">
+            {/* <div className="form-check form-switch">
               <input 
                 className="form-check-input" 
                 type="checkbox" 
@@ -56,7 +56,7 @@ export const NavBar = () => {
               <label className="form-check-label" htmlFor="themeToggle">
                 {theme === "light" ? "Light" : "Dark"}
               </label>
-            </div>
+            </div> */}
           </div>
 
           <button 
@@ -95,11 +95,11 @@ export const NavBar = () => {
                       {language === "EN" ? "Tools" : "Tools"}
                     </ScrollLink>
                   </li>
-                  <li className="nav-item custom-nav-buttons">
+                  {/* <li className="nav-item custom-nav-buttons">
                     <ScrollLink to="aboutme" smooth={true} duration={500} className="btn btn-outline-primary">
                       {language === "EN" ? "About Me" : "Über mich"}
                     </ScrollLink>
-                  </li>
+                  </li> */}
                 </>
               ) : (
                 <li className="nav-item custom-nav-buttons">

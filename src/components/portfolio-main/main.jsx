@@ -29,7 +29,7 @@ export const Main = () => {
               <ProjectList />
               <ChartsOverviewDemo />
               <Tools />
-              <AboutMe />
+              {/* <AboutMe /> */}
               <Footer />
             </>
           }
