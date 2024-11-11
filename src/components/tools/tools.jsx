@@ -1,23 +1,20 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "../../index.scss"; // If you have custom styles
-// import "../tools/tools.scss"; // If you have custom styles
-import { useEffect, useState } from "react";
 import axios from "axios";
 
 // Define a mapping of PrimaryGroup values to Bootstrap button classes
 const buttonClassMap = {
-  frontend: "primary",
-  backend: "secondary",
-  styling: "black-green",
-  meta: "black-green",
-  programming: "primary",
-  stack: "black-purple",
+  "front end webdev": "primary",
+  "testing": "secondary",
+  "styling": "black-purple",
+  "no code": "info",
+  programming: "secondary",
   databases: "secondary",
-  webdev: "black-green", // For a link style button
-  appdev: "black-purple", // For a link style button
-  // Add more mappings as needed
+  "backend webdev": "black-green",
+  "mobile app dev": "primary",
+  // More mappings as needed
 };
 
 export const Tools = () => {
@@ -43,9 +40,9 @@ export const Tools = () => {
 
         const data = await response.json();
 
-        // Data mapping with Toolbox filter
+        // Filter and map the data as needed
         const fetchedTools = data.records
-          .filter((record) => record.fields.ToolCloud === true) // Only include records where Toolbox is checked
+          .filter((record) => record.fields.ToolCloud === true) // Only include records where ToolCloud is checked
           .map((record) => ({
             name: record.fields.TechStack || "Unknown", // Fallback for TechStack
             link: record.fields.Link || "#", // Fallback if Link is not available
@@ -80,7 +77,9 @@ export const Tools = () => {
         </h1>
         <div className="col-lg-8 col-md-8 col-sm-8 col-xs-12 mx-auto">
           <p className="lead mb-4">
-            A list of tools, technologies, frameworks and libraries that I have used in my projects. Click on the buttons to learn more and be taken to the official documentation.
+            A list of tools, technologies, frameworks and libraries that I have
+            used in my projects. Click on the buttons to learn more and be
+            taken to the official documentation.
           </p>
           <div className="random-button-grid d-flex flex-wrap justify-content-center gap-0">
             {toolsData.map((tool, index) => (
@@ -98,8 +97,6 @@ export const Tools = () => {
                     whiteSpace: "nowrap",
                     overflow: "hidden",
                     textOverflow: "ellipsis",
-                    flexGrow: 0,
-                    flexShrink: 0,
                   }}
                 >
                   {tool.name}

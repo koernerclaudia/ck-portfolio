@@ -9,6 +9,7 @@ import CIW from '../../assets/CIW.png'
 export const Ambition = () => {
   return (
     <div style={{ backgroundColor: "#f3eefa", width: "100%" }}>
+      {/* <div style={{ backgroundColor: "#f7a6a6", width: "100%" }}> */}
       <div className=" px-4  my-5 text-center">
         <div className="row flex-xxl-row align-items-center g-5 px-4">
           <div className="col-md-6 py-4 col-sm-12">
@@ -31,8 +32,9 @@ export const Ambition = () => {
               I started out with HTML and CSS (CIW certified) over 15 years ago and have been navigating through different web tools ever since.<br></br><br></br> In 2024 I took the leap to become a Full Stack Web Developer
                (DEKRA certified).
             </p>
-            <img className="p-4" src={Dekra} />
+           
             <img className="p-4"src={CIW} />
+            <img className="p-4" src={Dekra} />
              
           </div>
         </div>
