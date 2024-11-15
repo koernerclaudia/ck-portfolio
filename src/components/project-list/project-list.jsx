@@ -17,7 +17,7 @@ const ProjectList = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}/CF-Training`,
+          `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}/CaseStudies`,
           {
             headers: {
               Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_API_KEY}`,
@@ -77,7 +77,7 @@ const ProjectList = () => {
               >
                 <img
                   className="bd-placeholder-img card-img-top"
-                  src={record.fields.Image ? record.fields.Image[0].url : "#"}
+                  src={record.fields.Image1 ? record.fields.Image1[0].url : "#"}
                   alt={record.fields.AppTitle || "Placeholder"}
                   style={{
                     width: "100%",
@@ -88,9 +88,10 @@ const ProjectList = () => {
                 />
 
                 <div className="card-body">
-                  <h5 className="card-title">{record.fields.AppTitle}</h5>
+                  <div><h5 style={{fontWeight: "bold"}} className="card-title">{record.fields.AppTitle}</h5>
+                  <h6 style={{fontWeight: "bold", color:'#997dff'}} className="card-title">Topic: {record.fields.Topic}</h6>
                   <p className="card-text">{record.fields.Blurb}</p>
-                  <p>
+                  <p style={{fontWeight: "bold"}}>
                     TechStack - Tools - Methodology:
                     <br />
                     {(record.fields.TechStack || []).map((id) => (
@@ -98,7 +99,14 @@ const ProjectList = () => {
                         {techStackNames[id] || id}
                       </button>
                     ))}
-                  </p>
+                  </p></div>
+                  <div  style={{
+      marginTop: "auto", // Push this div to the bottom
+      display: "flex",
+      gap: "8px", // Add spacing between buttons
+      justifyContent: "center", // Center buttons horizontally
+      padding: "10px",
+    }}>
                   <Link
                     to={`/item/${record.id}`}
                     className="btn btn-primary mt-2"
@@ -108,7 +116,7 @@ const ProjectList = () => {
                   {record.fields.GithubLink && (
                     <a
                       href={record.fields.GithubLink}
-                      className="btn btn-primary mt-2"
+                      className="btn btn-black-purple mt-2"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -119,13 +127,13 @@ const ProjectList = () => {
                   {record.fields.LiveApp && (
                     <a
                       href={record.fields.LiveApp}
-                      className="btn btn-primary mt-2"
+                      className="btn btn-secondary mt-2"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
                       Live App
                     </a>
-                  )}
+                  )}</div>
                 </div>
               </div>
             </div>

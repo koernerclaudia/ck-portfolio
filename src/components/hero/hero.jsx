@@ -14,11 +14,11 @@ export const Hero = () => {
       <div className="col-xxl-8 col-sm-12 container">
         <div className="row flex-sm-row-reverse align-items-center g-5 px-4">
           <div className=" col-12 col-sm-6 d-flex justify-content-center flex-shrink-0">
-            <img src={myHeader} className="d-block mx-md-auto img-fluid" loading="lazy" style={{maxWidth: "350px"}}/>
+            <img src={myHeader} className="d-block mx-md-auto img-fluid" loading="lazy" style={{maxWidth: "450px"}}/>
           </div>
           <div className="col-12 col-sm-6 py-4" minWidth="350px">
             <h1 className="display-5 fw-bold text-body-emphasis lh-2 mb-3" style={{ fontSize: 'clamp(2.1rem, 3.5vw, 3.7rem)' }}>Claudia's  <span className="special-purple">Full&nbsp;Stack</span> Project&nbsp;Portfolio</h1>
-            <p className="lead" style={{ fontSize: 'clamp(1.2rem, 2.5vw, 1.5rem)', marginBottom: '30px' }}>This is a collection of my web projects across the years. Enjoy browsing!</p>
+            <p className="lead" style={{ fontSize: 'clamp(1.2rem, 2.5vw, 1.5rem)', marginBottom: '30px' }}>This site is a collection of my web projects since 2007 including static websites, web apps, HTML newsletters and more. Enjoy browsing!</p>
             <div>
   {/* <a href="https://koernerclaudia.com" target="_blank">
     <button type="button" className="btn btn-primary btn-md px-3 me-2 mb-2 fs-6 fs-sm-5">My Website</button>

@@ -24291,16 +24291,12 @@ body {
   min-width: 350px;
 }
 
-.container {
-  width: 100% !important;
-}
-
 .mainbox {
   margin: 0 70px;
 }
 
 .MuiAxis-label {
-  font-size: .2rem !important;
+  font-size: .2rem;
 }
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
@@ -24325,69 +24321,68 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 }
 
 .btn-primary {
-  color: #fff !important;
-  background-color: #997dff !important;
-  border-color: #997dff !important;
-  border-radius: 50rem !important;
-  margin: 4px !important;
+  color: #fff;
+  background-color: #997dff;
+  border-color: #997dff;
+  border-radius: 50rem;
+  margin: 4px;
 }
 
 .btn-outline-primary {
-  color: #997dff !important;
-  background-color: #fff !important;
-  border-color: #997dff !important;
-  border-radius: 50rem !important;
-  margin: 4px !important;
+  color: #997dff;
+  background-color: #fff;
+  border-color: #997dff;
+  border-radius: 50rem;
+  margin: 4px;
 }
 
 .btn-secondary {
-  color: #212529 !important;
-  background-color: #85bfb6 !important;
-  border-color: #85bfb6 !important;
-  border-radius: 50rem !important;
-  margin: 4px !important;
+  color: #212529;
+  background-color: #85bfb6;
+  border-color: #85bfb6;
+  border-radius: 50rem;
+  margin: 4px;
 }
 
 .btn-outline-secondary {
-  color: #85bfb6 !important;
-  background-color: #fff !important;
-  border-color: #85bfb6 !important;
-  border-radius: 50rem !important;
-  margin: 4px !important;
+  color: #85bfb6;
+  background-color: #fff;
+  border-color: #85bfb6;
+  border-radius: 50rem;
+  margin: 4px;
 }
 
 .btn-black-purple {
-  color: #997dff !important;
-  background-color: #212529 !important;
-  border-color: #997dff !important;
-  border-radius: 50rem !important;
-  margin: 4px !important;
+  color: #997dff;
+  background-color: #212529;
+  border-color: #997dff;
+  border-radius: 50rem;
+  margin: 4px;
 }
 
 .btn-black-green {
-  color: #85bfb6 !important;
-  background-color: #212529 !important;
-  border-color: #85bfb6 !important;
-  border-radius: 50rem !important;
-  margin: 4px !important;
+  color: #85bfb6;
+  background-color: #212529;
+  border-color: #85bfb6;
+  border-radius: 50rem;
+  margin: 4px;
 }
 
 .btn-small-tech {
+  color: #fff;
+  background-color: #212529;
   border: none;
+  border-radius: 50rem;
   margin: 4px;
   font-size: .7rem;
-  color: #fff !important;
-  background-color: #212529 !important;
-  border-radius: 50rem !important;
-  margin: 0 3px !important;
 }
 
 .btn:hover {
-  color: #212529 !important;
-  background-color: #fff !important;
-  border-color: #212529 !important;
-  border-radius: 50rem !important;
-  margin: 4px !important;
+  color: #212529;
+  background-color: #fff;
+  border-color: #212529;
+  border-radius: 50rem;
+  margin: 4px;
 }
 
 .bd-placeholder-img {
