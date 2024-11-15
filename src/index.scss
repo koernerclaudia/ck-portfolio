@@ -26,16 +26,16 @@ body {
   min-width: 350px;
 }
 
-.container {
-  width: 100% !important;
-}
+// .containerbox {
+//   width: 100%
+// }
 
 .mainbox {
   margin: 0 70px;
 }
 
 .MuiAxis-label {
-  font-size: 0.2rem !important; /* Adjust font size */
+  font-size: 0.2rem  ; /* Adjust font size */
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -63,71 +63,75 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-primary {
-  background-color: #997dff !important;
-  border-radius: 50rem !important;
-  border-color:  #997dff !important;
-  color: #ffffff !important;
-  margin: 4px !important;
+  background-color: #997dff; 
+  border-radius: 50rem; 
+  border-color:  #997dff; 
+  color: #ffffff; 
+  margin: 4px; 
 }
 
 .btn-outline-primary {
-  background-color: #ffffff !important;
-  border-radius: 50rem !important;
-  border-color:  #997dff !important;
-  color: #997dff !important;
-  margin: 4px !important;
+  background-color: #ffffff  ;
+  border-radius: 50rem  ;
+  border-color:  #997dff  ;
+  color: #997dff  ;
+  margin: 4px  ;
 }
 
 .btn-secondary {
-  background-color: #85BFB6 !important;
-  border-radius: 50rem !important;
-  border-color:  #85BFB6 !important;
-  color: #212529 !important;
-  margin: 4px !important;
+  background-color: #85BFB6 ;
+  border-radius: 50rem  ;
+  border-color:  #85BFB6  ;
+  color: #212529  ;
+  margin: 4px  ;
 }
 
 .btn-outline-secondary {
-  background-color: #ffffff !important;
-  border-radius: 50rem !important;
-  border-color:  #85BFB6 !important;
-  color: #85BFB6 !important;
-  margin: 4px !important;
+  background-color: #ffffff  ;
+  border-radius: 50rem  ;
+  border-color:  #85BFB6  ;
+  color: #85BFB6  ;
+  margin: 4px  ;
 }
 
 .btn-black-purple {
-  background-color: #212529 !important;
-  border-radius: 50rem !important;
-  border-color:  #997dff !important;
-  color: #997dff !important;
-  margin: 4px !important;
+  background-color: #212529  ;
+  border-radius: 50rem  ;
+  border-color:  #997dff  ;
+  color: #997dff  ;
+  margin: 4px  ;
 }
 
 .btn-black-green {
-  background-color: #212529 !important;
-  border-radius: 50rem !important;
-  border-color:  #85BFB6 !important;
-  color: #85BFB6 !important;
-  margin: 4px !important;
+  background-color: #212529  ;
+  border-radius: 50rem  ;
+  border-color:  #85BFB6  ;
+  color: #85BFB6  ;
+  margin: 4px  ;
 }
 
 .btn-small-tech  {
-    background-color: #212529 !important;
+    background-color: #212529  ;
     border: none;
-    border-radius: 50rem !important;
-    color: #ffffff !important;
-    margin: 0 3px !important;
+    border-radius: 50rem  ;
+    color: #ffffff  ;
     font-size: 0.7rem;
     margin: 4px;
+  
+  
 
   }
 
   .btn:hover {
-  background-color: #ffffff !important;
-  border-radius: 50rem !important;
-  border-color:  #212529 !important;
-  color: #212529 !important;
-  margin: 4px !important;
+  background-color: #ffffff  ;
+  border-radius: 50rem  ;
+  border-color:  #212529  ;
+  color: #212529  ;
+  margin: 4px  ;
   }
+
+
+
 
   // Tools Buttons in a Grid
 

@@ -30,11 +30,10 @@ export default function ChartsOverviewDemo() {
     }
   };
 
-  // Process the data from Airtable and structure it for the chart
   const processAirtableData = (records) => {
     // Group the records by PrimaryGroup and map to chart data
     const groups = {};
-
+  
     records.forEach((record) => {
       const { PrimaryGroup, Status } = record.fields;
       if (PrimaryGroup && Status) {
@@ -50,21 +49,30 @@ export default function ChartsOverviewDemo() {
         groups[PrimaryGroup].values.push(Status * 100);  // Convert decimal percentage to whole number
       }
     });
-
-    // Convert groups object to array for chart rendering
-    return Object.values(groups);
+  
+    const customOrder = [
+      "WebDev Languages", "FrontEnd WebDev", "Styling", "Mobile App Dev", "NoCode & Automation", "APIs"
+    ];
+    
+    const sortedGroups = Object.keys(groups)
+      .sort((a, b) => customOrder.indexOf(a) - customOrder.indexOf(b))
+      .map((key) => groups[key]);
+    
+  
+    return sortedGroups;
   };
+  
 
   // Helper function to get color based on PrimaryGroup (for simplicity, we are defining some static colors)
   const getGroupColor = (groupName) => {
     const colors = {
-      "APIs": "#997dff",
-      "UI & Styling": "#EFBCD5",
-      "Documentation": "#85BFB6",
       "FrontEnd WebDev": "#528A8F",
       "BackEnd WebDev": "#BE97C6",
+      "WebDev Languages": "#85BFB6",
+      "Styling": "#EFBCD5",
       "Mobile App Dev": "#D7C6F3",
-      "NoCode": "#6c757d",
+      "APIs": "#997dff",
+      "NoCode & Automation": "#D7C6F3",
     };
     return colors[groupName] || "#6c757d";  // Default color
   };
