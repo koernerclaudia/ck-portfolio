@@ -71,34 +71,34 @@ const ItemDetail = () => {
         <div className="col-lg-6 col-md-6 col-sm-12 mb-4 align-items-start">
           <div className=" p-4">
             <h2 className="display-6 fw-bold">{record.fields.AppTitle}</h2>
-            <p className="lead">
+            <p className="lead border-bottom" style={{ paddingBottom: "10px" }}>
               {record.fields.Blurb}
-              <hr></hr>
-              <p className="mt-3">
-                {record.fields.GithubLink && (
-                  <a
-                    href={record.fields.GithubLink}
-                    className="btn btn-black-purple mt-2"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <FontAwesomeIcon icon={faGithub} />
-                    &nbsp;&nbsp;Github
-                  </a>
-                )}
+            </p>
+            <p className="lead">
+              {record.fields.GithubLink && (
+                <a
+                  href={record.fields.GithubLink}
+                  className="btn btn-black-purple mt-2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FontAwesomeIcon icon={faGithub} />
+                  &nbsp;&nbsp;Github
+                </a>
+              )}
 
-                {record.fields.LiveApp && (
-                  <a
-                    href={record.fields.LiveApp}
-                    className="btn btn-secondary mt-2"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Live App
-                  </a>
-                )}
-              </p>{" "}
-              <hr></hr>
+              {record.fields.LiveApp && (
+                <a
+                  href={record.fields.LiveApp}
+                  className="btn btn-secondary mt-2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Live App
+                </a>
+              )}
+            </p>{" "}
+            <p className="lead">
               <strong>Topic: </strong> {record.fields.Topic}
               <br />
               <strong>Completion: </strong> {record.fields.Completion}
@@ -106,9 +106,7 @@ const ItemDetail = () => {
               <strong>Client / Employer / Training: </strong>{" "}
               {record.fields.ClientEmployerTraining}
             </p>
-            <hr></hr>
-
-            <p className="lead">
+            <p className="lead border-top" style={{ paddingTop: "10px" }}>
               {" "}
               <strong>Project Objective:</strong>
               <br></br>
@@ -118,8 +116,7 @@ const ItemDetail = () => {
                 )
               )}
             </p>
-            <hr></hr>
-            <p className="lead">
+            <p className="lead border-top" style={{ paddingTop: "10px" }}>
               <strong>TechStack - Tools - Methodology:</strong>
               <br />
               {(record.fields.TechStack || []).map((id) => (
@@ -129,40 +126,29 @@ const ItemDetail = () => {
                 </button>
               ))}
             </p>
-
-            <hr></hr>
-            <p className="lead">
+            <p className="lead border-top" style={{ paddingTop: "10px" }}>
               <strong>Key Features / User Stories:</strong>
               <br></br>
               {record.fields.KeyFeatures.split("\n").map((feature, index) => (
                 <p key={index}>{feature}</p>
               ))}
             </p>
-
-            <hr></hr>
-
-            <p className="lead">
-              <strong>Try it out:</strong>
-              <br></br>
-              {record.fields.TryIt}</p>
-              
           
+            {record.fields.TryIt && (
+              <p className="lead border-top" style={{ paddingTop: "10px" }}>
+                <strong>Try it out:</strong>
+                <br></br>
+                {record.fields.TryIt}
+              </p>
+            )}
           </div>
         </div>
         <div className="col-lg-6 col-md-6 col-sm-12 mb-4">
-          <div className="border rounded-3 p-4">
-            {/* {record.fields.Image &&
-              record.fields.Image.slice(0, 3).map((image, index) => (
-                <div key={image.id || index}>
-                  <img
-                    src={image.url}
-                    alt={record.fields.AppTitle || "Placeholder"}
-                    style={{ objectFit: "cover", width: "100%" }}
-                    className="mb-4"
-                  />
-                  {index < record.fields.Image.slice(0, 3).length - 1 && <hr />}
-                </div>
-              ))} */}
+          <div className=" p-4" style={{
+    border: "1px solid #f3eefa", // Add border width and style
+    borderRadius: "15px",
+    borderColor: "#f3eefa",      // Optional, included for clarity
+  }}>
             <img
               className="bd-placeholder-img card-img-top"
               src={record.fields.Image1 ? record.fields.Image1[0].url : "#"}
@@ -174,41 +160,45 @@ const ItemDetail = () => {
               }}
             />
             <p>{record.fields.ImgTxt1}</p>
-            <hr />
+            {record.fields.Image2 && (
+              <>
             <img
-              className="bd-placeholder-img card-img-top"
+              className="bd-placeholder-img card-img-top border-top"
               src={record.fields.Image2 ? record.fields.Image2[0].url : "#"}
               alt={record.fields.ImgTxt2 || "Placeholder"}
               style={{
                 width: "100%",
                 objectFit: "cover",
                 objectPosition: "top",
+                paddingTop: "10px",
               }}
             />
-            <p>{record.fields.ImgTxt2}</p>
-            <hr />
+            <p>{record.fields.ImgTxt2}</p></>)}
+            {record.fields.Image3 && (
+              <>
             <img
-              className="bd-placeholder-img card-img-top"
+              className="bd-placeholder-img card-img-top border-top"
               src={record.fields.Image3 ? record.fields.Image3[0].url : "#"}
               alt={record.fields.ImgTxt3 || "Placeholder"}
               style={{
                 width: "100%",
                 objectFit: "cover",
                 objectPosition: "top",
+                paddingTop: "10px",
               }}
             />
-            <p>{record.fields.ImgTxt3}</p>
-            <hr />
+            <p>{record.fields.ImgTxt3}</p></>)}
+           
             <p className="lead">
               <strong>Related Apps:</strong>
               <br></br>
-              {record.fields.RelatedProjects}</p>
-      
+              {record.fields.RelatedProjects}
+            </p>
           </div>
         </div>
 
         <div className=" p-4 mt-2">
-          <div className="row border-bottom mb-3 ">
+          <div className="row border-top" style={{ paddingTop: "10px" }}>
             <div className="lead col-lg-4 col-md-4 col-sm-12 mb-4">
               {" "}
               <strong>
@@ -221,42 +211,50 @@ const ItemDetail = () => {
               ))}
             </div>
           </div>
-          <div className="row border-bottom mb-3">
-            <div className="lead col-lg-4 col-md-4 col-sm-12 mb-4">
-              <strong>
-                What decisions did you take and why? What were the consequences?
-              </strong>
+          {record.fields.DecisionsConsequences && (
+            <div className="row border-top" style={{ paddingTop: "10px" }}>
+              <div className="lead col-lg-4 col-md-4 col-sm-12 mb-4">
+                <strong>
+                  What decisions did you take and why? What were the
+                  consequences?
+                </strong>
+              </div>
+              <div className="lead col-lg-8 col-md-8 col-sm-12 mb-4">
+                {record.fields.DecisionsConsequences.split("\n").map(
+                  (feature, index) => (
+                    <p key={index}>{feature}</p>
+                  )
+                )}
+              </div>
             </div>
-            <div className="lead col-lg-8 col-md-8 col-sm-12 mb-4">
-              {record.fields.DecisionsConsequences.split("\n").map(
-                (feature, index) => (
+          )}
+          {record.fields.Different && (
+            <div className="row border-top" style={{ paddingTop: "10px" }}>
+              <div className="lead col-lg-4 col-md-4 col-sm-12 mb-4">
+                <strong>If you could, what would you do differently?</strong>
+              </div>
+              <div className="lead col-lg-8 col-md-8 col-sm-12 mb-4">
+                {record.fields.Different.split("\n").map((feature, index) => (
                   <p key={index}>{feature}</p>
-                )
-              )}
+                ))}
+              </div>
             </div>
-          </div>
-          <div className="row border-bottom mb-3">
-            <div className="lead col-lg-4 col-md-4 col-sm-12 mb-4">
-              <strong>If you could, what would you do differently?</strong>
+          )}
+          {record.fields.Lessons && (
+            <div className="row border-top" style={{ paddingTop: "10px" }}>
+              <div className="lead col-lg-4 col-md-4 col-sm-12 mb-4">
+                <strong>
+                  Retrospective - What lessons did you learn during this
+                  project?
+                </strong>
+              </div>
+              <div className="lead col-lg-8 col-md-8 col-sm-12 mb-4">
+                {record.fields.Lessons.split("\n").map((feature, index) => (
+                  <p key={index}>{feature}</p>
+                ))}
+              </div>
             </div>
-            <div className="lead col-lg-8 col-md-8 col-sm-12 mb-4">
-              {record.fields.Different.split("\n").map((feature, index) => (
-                <p key={index}>{feature}</p>
-              ))}
-            </div>
-          </div>
-          <div className="row mb-1">
-            <div className="lead col-lg-4 col-md-4 col-sm-12 mb-4">
-              <strong>
-                Retrospective - What lessons did you learn during this project?
-              </strong>
-            </div>
-            <div className="lead col-lg-8 col-md-8 col-sm-12 mb-4">
-              {record.fields.Lessons.split("\n").map((feature, index) => (
-                <p key={index}>{feature}</p>
-              ))}
-            </div>
-          </div>
+          )}
         </div>
       </div>
     </div>
@@ -264,4 +262,3 @@ const ItemDetail = () => {
 };
 
 export default ItemDetail;
-

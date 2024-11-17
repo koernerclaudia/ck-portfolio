@@ -89,8 +89,9 @@ const ProjectList = () => {
 
                 <div className="card-body">
                   <div><h5 style={{fontWeight: "bold"}} className="card-title">{record.fields.AppTitle}</h5>
-                  <h6 style={{fontWeight: "bold", color:'#997dff'}} className="card-title">Topic: {record.fields.Topic}</h6>
+                  <h6 style={{fontWeight: "bold", color:'#212529'}} className="card-title">Topic: <span style={{fontWeight: "bold", color:'#997dff'}}>{record.fields.Topic}</span></h6>
                   <p className="card-text">{record.fields.Blurb}</p>
+                  <hr></hr>
                   <p style={{fontWeight: "bold"}}>
                     TechStack - Tools - Methodology:
                     <br />
@@ -99,13 +100,13 @@ const ProjectList = () => {
                         {techStackNames[id] || id}
                       </button>
                     ))}
-                  </p></div>
+                  </p></div><hr></hr>
                   <div  style={{
       marginTop: "auto", // Push this div to the bottom
       display: "flex",
-      gap: "8px", // Add spacing between buttons
-      justifyContent: "center", // Center buttons horizontally
-      padding: "10px",
+      gap: "5px", // Add spacing between buttons
+      justifyContent: "left", // Center buttons horizontally
+      paddingRight: "5px",
     }}>
                   <Link
                     to={`/item/${record.id}`}

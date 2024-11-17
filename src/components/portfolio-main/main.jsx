@@ -5,12 +5,14 @@ import ChartsOverviewDemo from '../skills/skills';
 import { NavBar } from '../navbar/navbar';
 import { Footer } from '../footer/footer';
 import { Hero } from '../hero/hero';
+import { Legal } from '../legal/legal';
 import { Tools } from '../tools/tools';
 import ProjectList from '../project-list/project-list';
 import ItemDetail from '../project/project'; // Import the new ItemDetail component
 import { Ambition } from '../ambition/ambition';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import { Nav } from 'react-bootstrap';
 // import "../../index.scss";
 
 export const Main = () => {
@@ -36,7 +38,13 @@ export const Main = () => {
         />
 
         {/* Route for individual item detail pages */}
-        <Route path="/item/:id" element={<ItemDetail />} />
+        <Route path="/item/:id" element={
+          <ItemDetail />
+        
+          } />
+        <Route path="/legal" element={
+          <Legal />
+    } />
       </Routes>
     </Router>
     </div>

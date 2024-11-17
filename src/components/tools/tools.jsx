@@ -78,8 +78,8 @@ export const Tools = () => {
         <div className="col-lg-8 col-md-8 col-sm-8 col-xs-12 mx-auto">
           <p className="lead mb-4">
             A list of tools, technologies, frameworks and libraries that I have
-            used in my projects. Click on the buttons to learn more and be
-            taken to the official documentation.
+            used in my projects.<br></br>Click on the buttons to learn more and be
+            taken to the official websites / documentation.
           </p>
           <div className="random-button-grid d-flex flex-wrap justify-content-center gap-0">
             {toolsData.map((tool, index) => (
