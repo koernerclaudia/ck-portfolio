@@ -14,7 +14,7 @@ export default function ChartsOverviewDemo() {
   const fetchAirtableData = async () => {
     try {
       // Airtable API URL with filter and fields parameters
-      const apiUrl = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}/Skills?filterByFormula=AND({ToolCloud}=TRUE())`;
+      const apiUrl = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}/Skills?filterByFormula=AND({Skills}=TRUE())`;
 
       const response = await axios.get(apiUrl, {
         headers: {
@@ -51,7 +51,7 @@ export default function ChartsOverviewDemo() {
     });
   
     const customOrder = [
-      "WebDev Languages", "FrontEnd WebDev", "Styling", "Mobile App Dev", "NoCode & Automation", "APIs"
+      "FrontEnd & Mobile App Dev", "BackEnd WebDev", "WebDev Languages", "Styling", "APIs & Databases", "NoCode & Automation"
     ];
     
     const sortedGroups = Object.keys(groups)
@@ -66,13 +66,12 @@ export default function ChartsOverviewDemo() {
   // Helper function to get color based on PrimaryGroup (for simplicity, we are defining some static colors)
   const getGroupColor = (groupName) => {
     const colors = {
-      "FrontEnd WebDev": "#528A8F",
-      "BackEnd WebDev": "#BE97C6",
-      "WebDev Languages": "#85BFB6",
-      "Styling": "#EFBCD5",
-      "Mobile App Dev": "#D7C6F3",
-      "APIs": "#997dff",
-      "NoCode & Automation": "#D7C6F3",
+      "FrontEnd & Mobile App Dev": "#997dff", // dark lavender
+      "BackEnd WebDev": "#BE97C6", // mauve
+      "WebDev Languages": "#EFBCD5", // rose pink
+      "Styling":  "#85BFB6", // light green 
+      "APIs & Databases": "#528A8F", // dark green
+      "NoCode & Automation": "#D7C6F3", // light lavender
     };
     return colors[groupName] || "#6c757d";  // Default color
   };
@@ -86,11 +85,11 @@ export default function ChartsOverviewDemo() {
     <div className="px-4 py-5 my-5 text-center border-top" id="skills">
       <div className="container">
         <h1 className="display-5 fw-bold text-body-emphasis">
-          <span className="special-black">Knowledge </span>&amp; Skills
+          Knowledge &amp; <span className="special-purple">Skills</span>
         </h1>
         <p className="lead mb-4">
           These are the tools, frameworks, libraries, programming & meta
-          languages and more that I have been training on...
+          languages and more that I have been training on and am using in my projects. <br></br>Percentages shown are based on my self-assessment of my proficiency level.
         </p>
         <div className="row">
           {chartData.map((data, index) => (
@@ -125,8 +124,17 @@ export default function ChartsOverviewDemo() {
                         increment: 20,
                       },
                     ]}
-                    // width={350}
+                    tooltip={{
+                      formatter: (params) => {
+                        const index = params.dataIndex;
+                        const label = data.labels[index];
+                        const value = data.values[index];
+                        return `${label}: ${value}%\nAdditional Info: Lorem Ipsum`;
+                      },
+                    }}
                     height={250}
+                    // width={350}
+                   
                       barLabel="value"
                   />
                 </div>
@@ -140,39 +148,4 @@ export default function ChartsOverviewDemo() {
 }
 
 
-// {
-//   title: "Meta & Programming Languages",
-//   labels: ["HTML", "Javascript", "Vanilla JS", "TypeScript"],
-//   values: [90, 70, 70, 50],
-//   color: "#997dff",
-// },
-// {
-//   title: "Frontend Technologies",
-//   labels: ["React", "Angular", "HTML5"],
-//   values: [60, 50, 70],
-//   color: "#EFBCD5",
-// },
-// {
-//   title: "Backend Technologies",
-//   labels: ["Node", "MongoDB", "Express", "AWS", "RestAPI", "Firebase"],
-//   values: [65, 70, 50, 30, 65, 40],
-//   color: "#85BFB6",
-// },
-// {
-//   title: "Styling",
-//   labels: ["CSS", "SCSS#", "Sass", "Bootstrap"],
-//   values: [70, 60, 80],
-//   color: "#528A8F",
-// },
-// {
-//   title: "UI Design",
-//   labels: ["Figma", "Illustrator", "Photoshop"],
-//   values: [75, 85, 90],
-//   color: "#BE97C6",
-// },
-// {
-//   title: "NoCode Tools",
-//   labels: ["Softr", "Airtable", "Made"],
-//   values: [80, 80, 40],
-//   color: "#D7C6F3",
-// },
+
