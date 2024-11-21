@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { useLanguage } from "../language";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "./project-list.scss";
@@ -9,6 +10,7 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons"; // Correct brand 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const ProjectList = () => {
+  const { language } = useLanguage();
   const [records, setRecords] = useState([]);
   const [techStackNames, setTechStackNames] = useState({});
   const colors = ["#f3eefa"]; // add more colors as needed
@@ -66,7 +68,15 @@ const ProjectList = () => {
     <div className="px-4 py-2 my-5" id="projects">
       <div className="container">
         <h1 className="display-5 fw-bold text-body-emphasis text-center">
-          <span className="special-purple">Projects</span> so far
+          {language === "EN" ? (
+            <>
+              <span className="special-purple">Projects</span> so far
+            </>
+          ) : (
+            <>
+              Bisherige<span className="special-purple">Projekte</span>
+            </>
+          )}
         </h1>
         <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 py-5">
           {records.map((record, index) => (
@@ -88,54 +98,69 @@ const ProjectList = () => {
                 />
 
                 <div className="card-body">
-                  <div><h5 style={{fontWeight: "bold"}} className="card-title">{record.fields.AppTitle}</h5>
-                  <h6 style={{fontWeight: "bold", color:'#212529'}} className="card-title">Topic: <span style={{fontWeight: "bold", color:'#997dff'}}>{record.fields.Topic}</span></h6>
-                  <p className="card-text">{record.fields.Blurb}</p>
+                  <div>
+                    <h5 style={{ fontWeight: "bold" }} className="card-title">
+                      {record.fields.AppTitle}
+                    </h5>
+                    <h6
+                      style={{ fontWeight: "bold", color: "#212529" }}
+                      className="card-title"
+                    >
+                      Topic:{" "}
+                      <span style={{ fontWeight: "bold", color: "#997dff" }}>
+                        {record.fields.Topic}
+                      </span>
+                    </h6>
+                    <p className="card-text">{record.fields.Blurb}</p>
+                    <hr></hr>
+                    <p style={{ fontWeight: "bold" }}>
+                      TechStack - Tools - Methodology:
+                      <br />
+                      {(record.fields.TechStack || []).map((id) => (
+                        <button key={id} className="btn-small-tech">
+                          {techStackNames[id] || id}
+                        </button>
+                      ))}
+                    </p>
+                  </div>
                   <hr></hr>
-                  <p style={{fontWeight: "bold"}}>
-                    TechStack - Tools - Methodology:
-                    <br />
-                    {(record.fields.TechStack || []).map((id) => (
-                      <button key={id} className="btn-small-tech" 
-                      >
-                        {techStackNames[id] || id}
-                      </button>
-                    ))}
-                  </p></div><hr></hr>
-                  <div  style={{
-      marginTop: "auto", // Push this div to the bottom
-      display: "flex",
-      gap: "5px", // Add spacing between buttons
-      justifyContent: "left", // Center buttons horizontally
-      paddingRight: "5px",
-    }}>
-                  <Link
-                    to={`/item/${record.id}`}
-                    className="btn btn-primary mt-2"
+                  <div
+                    style={{
+                      marginTop: "auto", // Push this div to the bottom
+                      display: "flex",
+                      gap: "5px", // Add spacing between buttons
+                      justifyContent: "left", // Center buttons horizontally
+                      paddingRight: "5px",
+                    }}
                   >
-                    View Details
-                  </Link>
-                  {record.fields.GithubLink && (
-                    <a
-                      href={record.fields.GithubLink}
-                      className="btn btn-black-purple mt-2"
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <Link
+                      to={`/item/${record.id}`}
+                      className="btn btn-primary mt-2"
                     >
-                      <FontAwesomeIcon icon={faGithub} />
-                      &nbsp;&nbsp;Github
-                    </a>
-                  )}
-                  {record.fields.LiveApp && (
-                    <a
-                      href={record.fields.LiveApp}
-                      className="btn btn-secondary mt-2"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Live App
-                    </a>
-                  )}</div>
+                      View Details
+                    </Link>
+                    {record.fields.GithubLink && (
+                      <a
+                        href={record.fields.GithubLink}
+                        className="btn btn-black-purple mt-2"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <FontAwesomeIcon icon={faGithub} />
+                        &nbsp;&nbsp;Github
+                      </a>
+                    )}
+                    {record.fields.LiveApp && (
+                      <a
+                        href={record.fields.LiveApp}
+                        className="btn btn-secondary mt-2"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Live App
+                      </a>
+                    )}
+                  </div>
                 </div>
               </div>
             </div>
