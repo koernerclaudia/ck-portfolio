@@ -24335,7 +24335,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   background-color: #997dff;
   border-color: #997dff;
   border-radius: 50rem;
-  font-size: .9rem;
+  font-size: .8rem;
 }
 
 .btn-outline-primary {
@@ -24343,7 +24343,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   background-color: #fff;
   border-color: #997dff;
   border-radius: 50rem;
-  font-size: .9rem;
+  font-size: .8rem;
 }
 
 .btn-secondary {
@@ -24351,7 +24351,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   background-color: #85bfb6;
   border-color: #85bfb6;
   border-radius: 50rem;
-  font-size: .9rem;
+  font-size: .8rem;
 }
 
 .btn-outline-secondary {
@@ -24362,12 +24362,28 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   font-size: .9rem;
 }
 
+.btn-third {
+  color: #212529;
+  background-color: #be97c6;
+  border-color: #be97c6;
+  border-radius: 50rem;
+  font-size: .8rem;
+}
+
+.btn-fourth {
+  color: #fff;
+  background-color: #528a8f;
+  border-color: #528a8f;
+  border-radius: 50rem;
+  font-size: .8rem;
+}
+
 .btn-black-purple {
   color: #997dff;
   background-color: #212529;
   border-color: #997dff;
   border-radius: 50rem;
-  font-size: .9rem;
+  font-size: .8rem;
 }
 
 .btn-black-green {
@@ -24375,16 +24391,15 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   background-color: #212529;
   border-color: #85bfb6;
   border-radius: 50rem;
-  font-size: .9rem;
+  font-size: .8rem;
 }
 
-.btn-small-tech {
+.btn-black-white {
   color: #fff;
   background-color: #212529;
-  border: none;
+  border-color: #fff;
   border-radius: 50rem;
-  margin: 3px;
-  font-size: .7rem;
+  font-size: .8rem;
 }
 
 .btn:hover {
@@ -24393,6 +24408,18 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   border-color: #212529;
   border-radius: 50rem;
   margin: 4px;
+}
+
+.btn-small-tech {
+  color: #fff;
+  pointer-events: none;
+  background-color: #212529;
+  border: 1px #212529;
+  border-radius: 50rem;
+  width: auto;
+  margin: 3px;
+  padding: .2rem .4rem;
+  font-size: .7rem;
 }
 
 .custom-nav-buttons {
@@ -24420,6 +24447,16 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   font-style: italic;
 }
 
+.navbar-toggler {
+  color: #997dff;
+  background-color: #f3eefa;
+}
+
+.navbar-toggler-icon {
+  color: #997dff;
+  transition: all .3s;
+}
+
 @media (width >= 769px) and (width <= 1200px) {
   * {
     box-sizing: border-box;
@@ -24428,6 +24465,13 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 
   .mainbox {
     margin: 0 5px;
+  }
+
+  .btn-primary, .btn-outline-primary, .btn-secondary, .btn-outline-secondary, .btn-black-purple, .btn-black-green, .btn:hover {
+    align-self: center;
+    gap: .5rem;
+    margin: auto auto 1rem;
+    font-size: .8rem;
   }
 
   .custom-nav-buttons {
@@ -24439,18 +24483,18 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
     font-size: 1rem;
     display: flex;
   }
+}
+
+@media (width >= 501px) and (width <= 768px) {
+  .mainbox {
+    margin: 0 5px;
+  }
 
   .btn-primary, .btn-outline-primary, .btn-secondary, .btn-outline-secondary, .btn-black-purple, .btn-black-green, .btn:hover {
     align-self: center;
     gap: .5rem;
     margin: auto auto 1rem;
     font-size: .8rem;
-  }
-}
-
-@media (width >= 501px) and (width <= 768px) {
-  .mainbox {
-    margin: 0 5px;
   }
 
   .custom-nav-buttons {
@@ -24462,13 +24506,6 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
     margin: auto;
     font-size: 1rem;
     display: flex;
-  }
-
-  .btn-primary, .btn-outline-primary, .btn-secondary, .btn-outline-secondary, .btn-black-purple, .btn-black-green, .btn:hover {
-    align-self: center;
-    gap: .5rem;
-    margin: auto auto 1rem;
-    font-size: .7rem;
   }
 
   .custom-toggle-switches {
@@ -24488,6 +24525,13 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
     margin: 0 5px;
   }
 
+  .btn-primary, .btn-outline-primary, .btn-secondary, .btn-outline-secondary, .btn-black-purple, .btn-black-green, .btn:hover {
+    align-self: center;
+    gap: .4rem;
+    margin: auto auto 1rem;
+    font-size: .8rem;
+  }
+
   .custom-nav-buttons {
     flex-direction: column;
     align-self: center;
@@ -24496,13 +24540,6 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
     margin: auto;
     font-size: 1rem;
     display: flex;
-  }
-
-  .btn-primary, .btn-outline-primary, .btn-secondary, .btn-outline-secondary, .btn-black-purple, .btn-black-green, .btn:hover {
-    align-self: center;
-    gap: .4rem;
-    margin: auto auto 1rem;
-    font-size: .6rem;
   }
 
   .custom-toggle-switches {

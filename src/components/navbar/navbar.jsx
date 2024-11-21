@@ -64,16 +64,16 @@ export const NavBar = () => {
             </div> 
 
             <button 
-              className="navbar-toggler" 
-              type="button" 
-              data-bs-toggle="collapse" 
-              data-bs-target="#navbarNav" 
-              aria-controls="navbarNav" 
-              aria-expanded="false" 
-              aria-label="Toggle navigation"
-            >
-              <span className="navbar-toggler-icon"></span>
-            </button>
+  className="navbar-toggler" 
+  type="button" 
+  data-bs-toggle="collapse" 
+  data-bs-target="#navbarNav" 
+  aria-controls="navbarNav" 
+  aria-expanded="false" 
+  aria-label="Toggle navigation"
+>
+  <span className="navbar-toggler-icon"></span>
+</button>
 
             <div className="collapse navbar-collapse" id="navbarNav">
               <ul className="navbar-nav ms-auto mb-2 mb-lg-0 me-2">
@@ -89,11 +89,11 @@ export const NavBar = () => {
                         {language === "EN" ? "Projects" : "Projekte"}
                       </ScrollLink>
                     </li>
-                    <li className="nav-item custom-nav-buttons">
+                    {/* <li className="nav-item custom-nav-buttons">
                       <ScrollLink to="skills" smooth={true} duration={500} className="btn btn-primary">
                         {language === "EN" ? "Skills" : "Fähigkeiten"}
                       </ScrollLink>
-                    </li>
+                    </li> */}
                     <li className="nav-item custom-nav-buttons">
                       <ScrollLink to="tools" smooth={true} duration={500} className="btn btn-outline-primary">
                         {language === "EN" ? "Tools" : "Tools"}

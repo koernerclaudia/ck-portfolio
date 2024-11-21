@@ -19,7 +19,7 @@ export const Ambition = () => {
             </h1>
             <p className="lead mx-auto" style={{textAlign: "justify"}}>
             I love building visuals, always have! I was lucky that early my career in assisting startup founders & leaders I was given the opportunity to dive into web development &amp; UI Design and spearhead some creative projects for my employers, including websites, newsletters, internal wikis; also pitch decks, presentations & other visual materials.
-              <br></br><br></br>With an enhanced set of skills in Full Stack Development and my current deep dive into theAutomation & AI landscape, I am aiming for a full time career in creating digital products with a focus in FrontEnd solutions using code, low-code and no-code tools.
+              <br></br><br></br>With an enhanced set of skills in Full Stack Development and my current deep dive into the Automation & AI landscape, I am aiming for a full time career in creating digital products with a focus in FrontEnd solutions using code, low-code and no-code tools.
                          </p>
 
           </div>

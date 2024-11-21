@@ -6,14 +6,10 @@ import axios from "axios";
 
 // Define a mapping of PrimaryGroup values to Bootstrap button classes
 const buttonClassMap = {
-  "front end webdev": "primary",
-  "testing": "secondary",
-  "styling": "black-purple",
-  "no code": "info",
-  programming: "secondary",
-  databases: "secondary",
-  "backend webdev": "black-green",
-  "mobile app dev": "primary",
+  "frontend": "primary",
+  "backend": "secondary",
+  "styling": "fourth",
+  "nocode & ai": "third",
   // More mappings as needed
 };
 
@@ -78,9 +74,55 @@ export const Tools = () => {
         <div className="col-lg-8 col-md-8 col-sm-8 col-xs-12 mx-auto">
           <p className="lead mb-4">
             A list of tools, technologies, frameworks and libraries that I have
-            used in my projects.<br></br>Click on the buttons to learn more and be
-            taken to the official websites / documentation.
+            used in my projects.<br></br>Click on the buttons to learn more and
+            be taken to the official websites / documentation.
           </p>
+          <div>
+            <button
+              className="btn-small-tech align-items-center"
+              style={{
+                backgroundColor: "#997dff",
+              }}
+            >
+              FrontEnd
+            </button>
+            <button
+              className="btn-small-tech 
+              align-items-center"
+              style={{
+                backgroundColor: "#85BFB6",
+                color: "#212529",
+                
+              }}
+            >
+              Backend
+            </button>
+            <button
+              className="btn-small-tech align-items-center"
+              style={{
+                backgroundColor: "#BE97C6",
+                borderColor: "#BE97C6",
+                color: "#ffffff",
+              }}
+            >
+             NoCode & Automation
+            </button>
+            <button
+              className="btn-small-tech 
+              align-items-center"
+              style={{
+                backgroundColor: "#528A8F",
+              }}
+            >
+              Styling
+            </button>
+           
+  
+           
+           
+           
+            <hr></hr>
+          </div>
           <div className="random-button-grid d-flex flex-wrap justify-content-center gap-0">
             {toolsData.map((tool, index) => (
               <a
@@ -109,3 +151,12 @@ export const Tools = () => {
     </>
   );
 };
+
+// Colours to use
+
+// "FrontEnd & Mobile App Dev": "#997dff", // dark lavender
+// "BackEnd WebDev": "#BE97C6", // mauve
+// "WebDev Languages": "#EFBCD5", // rose pink
+// "Styling":  "#85BFB6", // light green
+// "APIs & Databases": "#528A8F", // dark green
+// "NoCode & Automation": "#D7C6F3", // light lavender

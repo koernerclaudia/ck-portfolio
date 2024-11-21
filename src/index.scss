@@ -26,9 +26,6 @@ body {
   min-width: 350px;
 }
 
-// .containerbox {
-//   width: 100%
-// }
 
 .mainbox {
   margin: 0 70px;
@@ -78,7 +75,7 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 50rem; 
   border-color:  #997dff; 
   color: #ffffff; 
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   
 }
 
@@ -87,15 +84,16 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 50rem  ;
   border-color:  #997dff  ;
   color: #997dff  ;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
 }
+
 
 .btn-secondary {
   background-color: #85BFB6 ;
   border-radius: 50rem  ;
   border-color:  #85BFB6  ;
   color: #212529  ;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
 }
 
 .btn-outline-secondary {
@@ -106,12 +104,27 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 0.9rem;
 }
 
+.btn-third {
+  background-color: #BE97C6 ;
+  border-radius: 50rem  ;
+  border-color:  #BE97C6  ;
+  color: #212529  ;
+  font-size: 0.8rem;
+}
+
+.btn-fourth {
+  background-color: #528A8F ;
+  border-radius: 50rem  ;
+  border-color:  #528A8F  ;
+  color: #ffffff  ;
+  font-size: 0.8rem;
+}
 .btn-black-purple {
   background-color: #212529  ;
   border-radius: 50rem  ;
   border-color:  #997dff  ;
   color: #997dff  ;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
 }
 
 .btn-black-green {
@@ -119,22 +132,17 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 50rem  ;
   border-color:  #85BFB6  ;
   color: #85BFB6  ;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
+}
+.btn-black-white {
+  background-color: #212529  ;
+  border-radius: 50rem  ;
+  border-color:  #ffffff  ;
+  color: #ffffff  ;
+  font-size: 0.8rem;
 }
 
-.btn-small-tech  {
-    background-color: #212529  ;
-    border: none;
-    border-radius: 50rem  ;
-    color: #ffffff  ;
-    font-size: 0.7rem;
-    margin: 3px;
-  
-  
-
-  }
-
-  .btn:hover {
+.btn:hover {
   background-color: #ffffff  ;
   border-radius: 50rem  ;
   border-color:  #212529  ;
@@ -143,32 +151,26 @@ h1, h2, h3, h4, h5, h6 {
  
   }
 
+.btn-small-tech  {
+    background-color: #212529  ;
+    border: 1px;
+    border-color: #212529;
+    border-radius: 50rem  ;
+    color: #ffffff  ;
+    font-size: 0.7rem;
+    margin: 3px;
+    padding: .2rem .4rem;
+    width: auto;
+    pointer-events: none;
+  }
+
+
+
   .custom-nav-buttons {
     display: flex;
     font-size: 1rem;
     margin: 3px;
    }
-
-
-
-
-  // Tools Buttons in a Grid
-
-  // .random-button-grid {
-  //   display: flex;
-  //   flex-wrap: wrap;
-  //   justify-content: center; /* Center align buttons */
-  //   gap: 0.2rem; /* Space between buttons */
-  // }
-  
-  // .random-button-grid button {
-  //   flex: 0 1 auto; /* Allow the button to grow and shrink */
-  //   // min-width: 120px; /* Set a minimum width for buttons */
-  //   // max-width: 200px; /* Set a maximum width for buttons */
-  // }
-
-
-
 
 .bd-placeholder-img {
   font-size: 1.125rem;
@@ -190,7 +192,17 @@ h1, h2, h3, h4, h5, h6 {
   color: #212529;
 }
 
+/* Remove the border around the button */
+.navbar-toggler {
+  background-color: #f3eefa;
+  color: #997dff ;
+}
 
+/* Change the color of the hamburger lines */
+.navbar-toggler-icon {
+  color: #997dff ;
+  transition: all 0.3s ease;
+}
 
 @media (min-width: 769px) and (max-width: 1200px) {
 
@@ -205,7 +217,15 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 5px;
 }
 
-/* Center align the buttons and stack vertically */
+
+.btn-primary, .btn-outline-primary, .btn-secondary, .btn-outline-secondary, .btn-black-purple, .btn-black-green, .btn:hover {
+  margin: auto;
+  align-self: center;
+  margin-bottom: 1rem; /* Add vertical spacing */
+  gap: 0.5rem; /* Add vertical spacing */
+  font-size: 0.8rem;
+}
+
 .custom-nav-buttons {
   display: flex;
   flex-direction: column;
@@ -217,15 +237,6 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 1rem;
  }
 
-/* Add width and margin adjustments for buttons */
-.btn-primary, .btn-outline-primary, .btn-secondary, .btn-outline-secondary, .btn-black-purple, .btn-black-green, .btn:hover {
-  margin: auto;
-  align-self: center;
-  margin-bottom: 1rem; /* Add vertical spacing */
-  gap: 0.5rem; /* Add vertical spacing */
-  font-size: 0.8rem;
-}
-
 }
 
 @media (min-width: 501px) and (max-width: 768px) {
@@ -235,16 +246,7 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0 5px;
   }
 
-  .custom-nav-buttons {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    margin: auto;
-    align-self: center;
-    gap: 0.5rem; /* Add vertical spacing */
-    font-size: 1rem;
-  }
+
 
 /* Add width and margin adjustments for buttons */
 .btn-primary, .btn-outline-primary, .btn-secondary, .btn-outline-secondary, .btn-black-purple, .btn-black-green, .btn:hover {
@@ -252,7 +254,18 @@ h1, h2, h3, h4, h5, h6 {
   align-self: center;
   margin-bottom: 1rem; /* Add vertical spacing */
   gap: 0.5rem; /* Add vertical spacing */
-  font-size: 0.7rem;
+  font-size: 0.8rem;
+}
+
+.custom-nav-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: auto;
+  align-self: center;
+  gap: 0.5rem; /* Add vertical spacing */
+  font-size: 1rem;
 }
 
 /* Center-align toggle switches */
@@ -270,14 +283,19 @@ h1, h2, h3, h4, h5, h6 {
 /* Style for small screens */
 @media (min-width: 0px)  and (max-width: 500px) {
 
- 
-
   .mainbox {
     margin: 0 5px;
     min-width: 100%;
   }
 
-  /* Center align the buttons and stack vertically */
+  .btn-primary, .btn-outline-primary, .btn-secondary, .btn-outline-secondary, .btn-black-purple, .btn-black-green, .btn:hover {
+    margin: auto;
+    align-self: center;
+    margin-bottom: 1rem; /* Add vertical spacing */
+    gap: 0.4rem; /* Add vertical spacing */
+    font-size: 0.8rem;
+  }
+
   .custom-nav-buttons {
     display: flex;
     flex-direction: column;
@@ -287,15 +305,6 @@ h1, h2, h3, h4, h5, h6 {
     gap: 0.5rem; /* Add vertical spacing */
     font-size: 1rem;
    }
-
-  /* Add width and margin adjustments for buttons */
-  .btn-primary, .btn-outline-primary, .btn-secondary, .btn-outline-secondary, .btn-black-purple, .btn-black-green, .btn:hover {
-    margin: auto;
-    align-self: center;
-    margin-bottom: 1rem; /* Add vertical spacing */
-    gap: 0.4rem; /* Add vertical spacing */
-    font-size: 0.6rem;
-  }
 
   /* Center-align toggle switches */
   .custom-toggle-switches {
