@@ -96,7 +96,8 @@ const ProjectList = () => {
                     TechStack - Tools - Methodology:
                     <br />
                     {(record.fields.TechStack || []).map((id) => (
-                      <button key={id} className="btn-small-tech">
+                      <button key={id} className="btn-small-tech" 
+                      >
                         {techStackNames[id] || id}
                       </button>
                     ))}

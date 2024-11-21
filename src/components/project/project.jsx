@@ -188,12 +188,13 @@ const ItemDetail = () => {
               }}
             />
             <p>{record.fields.ImgTxt3}</p></>)}
-           
+            {record.fields.RelatedProjects && (
+              <>
             <p className="lead">
               <strong>Related Apps:</strong>
               <br></br>
               {record.fields.RelatedProjects}
-            </p>
+            </p></>)}
           </div>
         </div>
 
