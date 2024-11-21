@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AboutMe } from '../AboutMe/AboutMe';
 import ChartsOverviewDemo from '../skills/skills';
 import { NavBar } from '../navbar/navbar';
+import {LanguageProvider} from "../language";
 import { Footer } from '../footer/footer';
 import { Hero } from '../hero/hero';
 import { Legal } from '../legal/legal';
@@ -19,6 +20,7 @@ export const Main = () => {
   return (
     <div className='main'>
     <Router>
+      <LanguageProvider>
       <NavBar />
       <Routes>
         {/* Route for the main page */}
@@ -46,7 +48,10 @@ export const Main = () => {
           <Legal />
     } />
       </Routes>
+      </LanguageProvider>
     </Router>
     </div>
   );
 };
+
+
