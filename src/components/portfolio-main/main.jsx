@@ -4,6 +4,7 @@ import { AboutMe } from '../AboutMe/AboutMe';
 import ChartsOverviewDemo from '../skills/skills';
 import { NavBar } from '../navbar/navbar';
 import {LanguageProvider} from "../language";
+import NotFound from '../notfound';
 import { Footer } from '../footer/footer';
 import { Hero } from '../hero/hero';
 import { Legal } from '../legal/legal';
@@ -47,6 +48,8 @@ export const Main = () => {
         <Route path="/legal" element={
           <Legal />
     } />
+   
+    <Route path="*" element={<NotFound />} />
       </Routes>
       </LanguageProvider>
     </Router>

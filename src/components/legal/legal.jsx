@@ -19,7 +19,12 @@ export const Legal = () => {
               All content on this website, including text, code, designs, and
               projects, is © 2024 and written by myself, unless otherwise
               specified. Unauthorized use, reproduction, or distribution of any
-              material is prohibited without explicit permission.<hr></hr>
+              material is prohibited without explicit permission. <br></br>
+              <br></br>
+              <strong>404 Error Page</strong> Illustration by <a className="footer-link" href="https://undraw.co/" target="_blank">unDraw</a>
+              
+              <hr></hr>
+
               <strong>Third-Party Libraries</strong>
               <br></br>
               This site uses third-party libraries, such as React.js and MUI X,
