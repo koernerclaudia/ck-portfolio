@@ -50,12 +50,12 @@ h1, h2, h3, h4, h5, h6 {
 
 .footer-link {
   color: #212529 !important;
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 .footer-link:hover {
   color: #212529;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 
@@ -226,7 +226,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-.btn-primary, .btn-outline-primary, .btn-secondary, .btn-outline-secondary, .btn-black-purple, .btn-black-green, .btn:hover {
+.btn-primary, .btn-outline-primary, .btn-secondary, .btn-outline-secondary, .btn-black-purple, .btn-black-green, .btn-fourth, .btn-third, .btn:hover {
   margin: auto;
   align-self: center;
   margin-bottom: 1rem; /* Add vertical spacing */
@@ -257,7 +257,7 @@ h1, h2, h3, h4, h5, h6 {
 
 
 /* Add width and margin adjustments for buttons */
-.btn-primary, .btn-outline-primary, .btn-secondary, .btn-outline-secondary, .btn-black-purple, .btn-black-green, .btn:hover {
+.btn-primary, .btn-outline-primary, .btn-secondary, .btn-outline-secondary, .btn-black-purple, .btn-black-green, .btn-fourth, .btn-third, .btn:hover {
   margin: auto;
   align-self: center;
   margin-bottom: 1rem; /* Add vertical spacing */
@@ -296,7 +296,7 @@ h1, h2, h3, h4, h5, h6 {
     min-width: 100%;
   }
 
-  .btn-primary, .btn-outline-primary, .btn-secondary, .btn-outline-secondary, .btn-black-purple, .btn-black-green, .btn:hover {
+  .btn-primary, .btn-outline-primary, .btn-secondary, .btn-outline-secondary, .btn-black-purple, .btn-black-green, .btn-fourth, .btn-third, .btn:hover {
     margin: auto;
     align-self: center;
     margin-bottom: 1rem; /* Add vertical spacing */
