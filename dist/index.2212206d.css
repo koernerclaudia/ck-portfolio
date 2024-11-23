@@ -24335,7 +24335,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   background-color: #997dff;
   border-color: #997dff;
   border-radius: 50rem;
-  font-size: .8rem;
+  font-size: 1rem;
 }
 
 .btn-outline-primary {
@@ -24343,7 +24343,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   background-color: #fff;
   border-color: #997dff;
   border-radius: 50rem;
-  font-size: .8rem;
+  font-size: 1rem;
 }
 
 .btn-secondary {
@@ -24351,7 +24351,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   background-color: #85bfb6;
   border-color: #85bfb6;
   border-radius: 50rem;
-  font-size: .8rem;
+  font-size: 1rem;
 }
 
 .btn-outline-secondary {
@@ -24359,7 +24359,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   background-color: #fff;
   border-color: #85bfb6;
   border-radius: 50rem;
-  font-size: .9rem;
+  font-size: 1rem;
 }
 
 .btn-third {
@@ -24367,7 +24367,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   background-color: #be97c6;
   border-color: #be97c6;
   border-radius: 50rem;
-  font-size: .8rem;
+  font-size: 1rem;
 }
 
 .btn-fourth {
@@ -24375,7 +24375,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   background-color: #528a8f;
   border-color: #528a8f;
   border-radius: 50rem;
-  font-size: .8rem;
+  font-size: 1rem;
 }
 
 .btn-black-purple {
@@ -24383,7 +24383,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   background-color: #212529;
   border-color: #997dff;
   border-radius: 50rem;
-  font-size: .8rem;
+  font-size: 1rem;
 }
 
 .btn-black-green {
@@ -24391,7 +24391,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   background-color: #212529;
   border-color: #85bfb6;
   border-radius: 50rem;
-  font-size: .8rem;
+  font-size: 1rem;
 }
 
 .btn-black-white {
@@ -24399,7 +24399,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   background-color: #212529;
   border-color: #fff;
   border-radius: 50rem;
-  font-size: .8rem;
+  font-size: 1rem;
 }
 
 .btn:hover {

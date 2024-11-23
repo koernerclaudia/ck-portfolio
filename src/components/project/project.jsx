@@ -75,6 +75,32 @@ const ItemDetail = () => {
               {record.fields.Blurb}
             </p>
             <p className="lead">
+              <strong>Topic: </strong> {record.fields.Topic}
+              <br />
+              <strong>Completion: </strong> {record.fields.Completion}
+              <br />
+              <strong>Client / Employer / Training: </strong>
+{record.fields.ClientLink && record.fields.ClientLink.trim() ? (
+  <a
+    className="footer-link"
+    href={record.fields.ClientLink}
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    {record.fields.ClientEmployerTraining}
+  </a>
+) : (
+  <span>{record.fields.ClientEmployerTraining}</span>
+)}
+            </p>
+            {record.fields.TryIt && (
+              <p className="lead border-top" style={{ paddingTop: "10px" }}>
+                <strong>Try it out:</strong>
+                <br></br>
+                {record.fields.TryIt}
+              </p>
+            )}
+            <p className="lead">
               {record.fields.GithubLink && (
                 <a
                   href={record.fields.GithubLink}
@@ -98,14 +124,6 @@ const ItemDetail = () => {
                 </a>
               )}
             </p>{" "}
-            <p className="lead">
-              <strong>Topic: </strong> {record.fields.Topic}
-              <br />
-              <strong>Completion: </strong> {record.fields.Completion}
-              <br />
-              <strong>Client / Employer / Training: </strong>{" "}
-              {record.fields.ClientEmployerTraining}
-            </p>
             <p className="lead border-top" style={{ paddingTop: "10px" }}>
               {" "}
               <strong>Project Objective:</strong>
@@ -116,39 +134,72 @@ const ItemDetail = () => {
                 )
               )}
             </p>
+            {record.fields.Purpose && (
+            <p className="lead border-top" style={{ paddingTop: "10px" }}>
+              {" "}
+              <strong>Purpose:</strong>
+              <br></br>
+              {record.fields.Purpose.split("\n").map((feature, index) => (
+                <p key={index}>{feature}</p>
+              ))}
+            </p>)}
+            {record.fields.Duration && (
+            <p className="lead border-top" style={{ paddingTop: "10px" }}>
+              {" "}
+             
+              <strong>Duration:</strong>
+              <br></br>
+              {record.fields.Duration.split("\n").map((feature, index) => (
+                <p key={index}>{feature}</p>
+              ))}
+            </p>)}
+            <p className="lead border-top" style={{ paddingTop: "10px" }}>
+              {" "}
+              <strong>Role:</strong>
+              <br></br>
+              {record.fields.Role.split("\n").map((feature, index) => (
+                <p key={index}>{feature}</p>
+              ))}
+            </p>
             <p className="lead border-top" style={{ paddingTop: "10px" }}>
               <strong>TechStack - Tools - Methodology:</strong>
               <br />
               {(record.fields.TechStack || []).map((id) => (
-                <button key={id} className="btn-small-tech">
+                <button key={id} className="btn-small-tech px-2 mt-2" style={{fontSize: "1rem"}}>
                   {techStackNames[id] || id}{" "}
                   {/* Display name or fallback to ID */}
                 </button>
               ))}
             </p>
+            {/* <p className="lead border-top" style={{ paddingTop: "10px" }}>
+              <strong>Approach</strong>
+              <br />
+              {record.fields.Approach.split("\n").map(
+                (feature, index) => (
+                  <p key={index}>{feature}</p>
+                )
+              )}
+            </p> */}
             <p className="lead border-top" style={{ paddingTop: "10px" }}>
-              <strong>Key Features / User Stories:</strong>
-              <br></br>
-              {record.fields.KeyFeatures.split("\n").map((feature, index) => (
-                <p key={index}>{feature}</p>
-              ))}
+              <strong>Credits:</strong>
+              <br></br>Tutor:
+              {record.fields.Tutor}
+              <br></br>Mentor:
+              {record.fields.Mentor}
             </p>
-          
-            {record.fields.TryIt && (
-              <p className="lead border-top" style={{ paddingTop: "10px" }}>
-                <strong>Try it out:</strong>
-                <br></br>
-                {record.fields.TryIt}
-              </p>
-            )}
           </div>
         </div>
         <div className="col-lg-6 col-md-6 col-sm-12 mb-4">
-          <div className=" p-4" style={{
-    border: "1px solid #f3eefa", // Add border width and style
-    borderRadius: "15px",
-    borderColor: "#f3eefa",      // Optional, included for clarity
-  }}>
+          <div
+            className=" p-4"
+            style={{
+              border: "1px solid #f3eefa", // Add border width and style
+              borderRadius: "15px",
+              borderColor: "#f3eefa", // Optional, included for clarity
+            }}
+          >
+            {" "}
+            <h4 className="fw-bold text-center">Views & Features</h4>
             <img
               className="bd-placeholder-img card-img-top"
               src={record.fields.Image1 ? record.fields.Image1[0].url : "#"}
@@ -157,70 +208,114 @@ const ItemDetail = () => {
                 width: "100%",
                 objectFit: "cover",
                 objectPosition: "top",
+                borderRadius: "10px",
+                marginBottom: "10px",
               }}
             />
-            <p>{record.fields.ImgTxt1}</p>
+            <p className="small lh-sm fst-italic">{record.fields.ImgTxt1}</p>
             {record.fields.Image2 && (
               <>
-            <img
-              className="bd-placeholder-img card-img-top border-top"
-              src={record.fields.Image2 ? record.fields.Image2[0].url : "#"}
-              alt={record.fields.ImgTxt2 || "Placeholder"}
-              style={{
-                width: "100%",
-                objectFit: "cover",
-                objectPosition: "top",
-                paddingTop: "10px",
-              }}
-            />
-            <p>{record.fields.ImgTxt2}</p></>)}
+                <img
+                  className="bd-placeholder-img card-img-top border-top"
+                  src={record.fields.Image2 ? record.fields.Image2[0].url : "#"}
+                  alt={record.fields.ImgTxt2 || "Placeholder"}
+                  style={{
+                    width: "100%",
+                    objectFit: "cover",
+                    objectPosition: "top",
+                    borderRadius: "10px",
+                    marginBottom: "10px",
+                  }}
+                />
+               <p className="small lh-sm fst-italic">{record.fields.ImgTxt2}</p>
+              </>
+            )}
             {record.fields.Image3 && (
               <>
-            <img
-              className="bd-placeholder-img card-img-top border-top"
-              src={record.fields.Image3 ? record.fields.Image3[0].url : "#"}
-              alt={record.fields.ImgTxt3 || "Placeholder"}
-              style={{
-                width: "100%",
-                objectFit: "cover",
-                objectPosition: "top",
-                paddingTop: "10px",
-              }}
-            />
-            <p>{record.fields.ImgTxt3}</p></>)}
+                <img
+                  className="bd-placeholder-img card-img-top border-top"
+                  src={record.fields.Image3 ? record.fields.Image3[0].url : "#"}
+                  alt={record.fields.ImgTxt3 || "Placeholder"}
+                  style={{
+                    width: "100%",
+                    objectFit: "cover",
+                    objectPosition: "top",
+                    borderRadius: "10px",
+                    marginBottom: "10px",
+                  }}
+                />
+                <p className="small lh-sm fst-italic">{record.fields.ImgTxt3}</p>
+              </>
+            )}
+            {record.fields.Image4 && (
+              <>
+                <img
+                  className="bd-placeholder-img card-img-top border-top"
+                  src={record.fields.Image4 ? record.fields.Image4[0].url : "#"}
+                  alt={record.fields.ImgTxt4 || "Placeholder"}
+                  style={{
+                    width: "100%",
+                    objectFit: "cover",
+                    objectPosition: "top",
+                    borderRadius: "10px",
+                    marginBottom: "10px",
+                  }}
+                  onClick={() =>
+                    window.open(
+                      record.fields.Image4 ? record.fields.Image4[0].url : "#",
+                      "_blank"
+                    )
+                  }
+                />
+               <p className="small lh-sm fst-italic">{record.fields.ImgTxt4}</p>
+              </>
+            )}
             {record.fields.RelatedProjects && (
               <>
-            <p className="lead">
-              <strong>Related Apps:</strong>
-              <br></br>
-              {record.fields.RelatedProjects}
-            </p></>)}
+                <p className="lead">
+                  <strong>Related Apps:</strong>
+                  <br></br>
+                  {record.fields.RelatedProjects}
+                </p>
+              </>
+            )}
           </div>
         </div>
 
         <div className=" p-4 mt-2">
           <div className="row border-top" style={{ paddingTop: "10px" }}>
-            <div className="lead col-lg-4 col-md-4 col-sm-12 mb-4">
-              {" "}
-              <strong>
-                What was your role in this project, and what tasks did you face?
-              </strong>
-            </div>
-            <div className="lead col-lg-8 col-md-8 col-sm-12 mb-4">
-              {record.fields.Role.split("\n").map((feature, index) => (
-                <p key={index}>{feature}</p>
-              ))}
-            </div>
+            <h3 className="fw-bold text-center">
+              <span className="special-purple">Approach</span> &amp; Process
+            </h3>
+          </div>
+
+          <div className="row border-top" style={{ paddingTop: "10px" }}>
+            {record.fields.Backend && (
+              <div className="lead col-lg-6 col-md-6 col-sm-12 mb-4">
+                <strong>BackEnd</strong>
+                {record.fields.Backend.split("\n").map((feature, index) => (
+                  <p key={index}>{feature}</p>
+                ))}
+              </div>
+            )}
+            {record.fields.Frontend && (
+              <div className="lead col-lg-6 col-md-6 col-sm-12 mb-4">
+                <strong>FrontEnd</strong>
+                {record.fields.Frontend.split("\n").map((feature, index) => (
+                  <p key={index}>{feature}</p>
+                ))}
+              </div>
+            )}
           </div>
           {record.fields.DecisionsConsequences && (
             <div className="row border-top" style={{ paddingTop: "10px" }}>
-              <div className="lead col-lg-4 col-md-4 col-sm-12 mb-4">
+              <div className="lead col-lg-2 col-md-4 col-sm-12 mb-4">
                 <strong>
                   What decisions did you take and why? What were the
                   consequences?
                 </strong>
               </div>
-              <div className="lead col-lg-8 col-md-8 col-sm-12 mb-4">
+              <div className="lead col-lg-10 col-md-8 col-sm-12 mb-4">
                 {record.fields.DecisionsConsequences.split("\n").map(
                   (feature, index) => (
                     <p key={index}>{feature}</p>
@@ -229,33 +324,69 @@ const ItemDetail = () => {
               </div>
             </div>
           )}
-          {record.fields.Different && (
-            <div className="row border-top" style={{ paddingTop: "10px" }}>
-              <div className="lead col-lg-4 col-md-4 col-sm-12 mb-4">
-                <strong>If you could, what would you do differently?</strong>
-              </div>
-              <div className="lead col-lg-8 col-md-8 col-sm-12 mb-4">
-                {record.fields.Different.split("\n").map((feature, index) => (
-                  <p key={index}>{feature}</p>
-                ))}
-              </div>
-            </div>
-          )}
-          {record.fields.Lessons && (
-            <div className="row border-top" style={{ paddingTop: "10px" }}>
-              <div className="lead col-lg-4 col-md-4 col-sm-12 mb-4">
-                <strong>
-                  Retrospective - What lessons did you learn during this
-                  project?
-                </strong>
-              </div>
-              <div className="lead col-lg-8 col-md-8 col-sm-12 mb-4">
-                {record.fields.Lessons.split("\n").map((feature, index) => (
-                  <p key={index}>{feature}</p>
-                ))}
-              </div>
-            </div>
-          )}
+
+          <div className="row border-top" style={{ paddingTop: "10px" }}>
+            <h3 className="fw-bold text-center">Retrospective</h3>
+          </div>
+
+          <div className="row border-top" style={{ paddingTop: "10px" }}>
+            {record.fields.Well && (
+              <>
+                <div className="lead col-lg-2 col-md-4 col-sm-12 mb-4">
+                  <strong>Successes:</strong>
+                </div>
+                <div className="lead col-lg-10 col-md-8 col-sm-12 mb-4">
+                  {record.fields.Well.split("\n").map((feature, index) => (
+                    <p key={index}>{feature}</p>
+                  ))}
+                </div>
+              </>
+            )}
+          </div>
+          <div className="row border-top" style={{ paddingTop: "10px" }}>
+            {record.fields.Challenging && (
+              <>
+                <div className="lead col-lg-2 col-md-4 col-sm-12 mb-4">
+                  <strong>Challenges:</strong>
+                </div>
+                <div className="lead col-lg-10 col-md-8 col-sm-12 mb-4">
+                  {record.fields.Challenging.split("\n").map(
+                    (feature, index) => (
+                      <p key={index}>{feature}</p>
+                    )
+                  )}
+                </div>
+              </>
+            )}
+          </div>
+          <div className="row border-top" style={{ paddingTop: "10px" }}>
+            {record.fields.Different && (
+              <>
+                <div className="lead col-lg-2 col-md-4 col-sm-12 mb-4">
+                  <strong>If you could, what would you do differently?:</strong>
+                </div>
+                <div className="lead col-lg-10 col-md-8 col-sm-12 mb-4">
+                  {record.fields.Different.split("\n").map((feature, index) => (
+                    <p key={index}>{feature}</p>
+                  ))}
+                </div>
+              </>
+            )}
+          </div>
+          <div className="row border-top" style={{ paddingTop: "10px" }}>
+            {record.fields.Future && (
+              <>
+                <div className="lead col-lg-2 col-md-4 col-sm-12 mb-4">
+                  <strong>Possible Future Features:</strong>
+                </div>
+                <div className="lead col-lg-10 col-md-8 col-sm-12 mb-4">
+                  {record.fields.Future.split("\n").map((feature, index) => (
+                    <p key={index}>{feature}</p>
+                  ))}
+                </div>
+              </>
+            )}
+          </div>
         </div>
       </div>
     </div>
