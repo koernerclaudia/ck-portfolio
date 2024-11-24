@@ -74,7 +74,7 @@ const ProjectList = () => {
             </>
           ) : (
             <>
-              Bisherige<span className="special-purple">Projekte</span>
+              Bisherige &nbsp;<span className="special-purple">Projekte</span>
             </>
           )}
         </h1>
@@ -128,14 +128,13 @@ const ProjectList = () => {
                     style={{
                       marginTop: "auto", // Push this div to the bottom
                       display: "flex",
-                      gap: "5px", // Add spacing between buttons
                       justifyContent: "left", // Center buttons horizontally
-                      paddingRight: "5px",
+                      paddingRight: "2px",
                     }}
                   >
                     <Link
                       to={`/item/${record.id}`}
-                      className="btn btn-primary mt-2"
+                      className="btn btn-primary mt-2 me-1"
                     >
                       View Details
                     </Link>
@@ -156,6 +155,7 @@ const ProjectList = () => {
                         className="btn btn-secondary mt-2"
                         target="_blank"
                         rel="noopener noreferrer"
+                      
                       >
                         Live App
                       </a>
