@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import { useLanguage } from "../language";
 import "../../index.scss"; // If you have custom styles
 import axios from "axios";
 
@@ -14,6 +15,7 @@ const buttonClassMap = {
 };
 
 export const Tools = () => {
+  const { language } = useLanguage();
   const [toolsData, setToolsData] = useState([]);
   const [error, setError] = useState(null);
 
@@ -69,13 +71,29 @@ export const Tools = () => {
         id="tools"
       >
         <h1 className="display-5 fw-bold text-body-emphasis">
-          Tools & <span className="special-black">Technologies</span>
+          {language === "EN" ? (
+            <>
+              Tools &amp;<span className="special-black">Technologies</span>
+            </>
+          ) : (
+            <>
+              Tools &amp;<span className="special-black">Technologien</span>
+            </>
+          )}
         </h1>
         <div className="col-lg-8 col-md-8 col-sm-8 col-xs-12 mx-auto">
           <p className="lead mb-4">
-            A list of tools, technologies, frameworks and libraries that I have
-            used in my projects.<br></br>Click on the buttons to learn more and
-            be taken to the official websites / documentation.
+          {language === "EN" ? (
+            <>
+              A list of tools, technologies, frameworks and libraries that I have
+              used in my projects.
+            </>
+          ) : (
+            <>
+              Eine Liste von Tools, Technologien, Frameworks und Bibliotheken, die ich in meinen Projekten verwendet habe.
+            </>
+          )}
+          
           </p>
           <div>
             <button

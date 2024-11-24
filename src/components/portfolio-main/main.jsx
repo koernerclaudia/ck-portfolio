@@ -4,6 +4,7 @@ import { AboutMe } from '../AboutMe/AboutMe';
 import ChartsOverviewDemo from '../skills/skills';
 import { NavBar } from '../navbar/navbar';
 import {LanguageProvider} from "../language";
+
 import NotFound from '../notfound';
 import { Footer } from '../footer/footer';
 import { Hero } from '../hero/hero';
@@ -21,6 +22,7 @@ export const Main = () => {
   return (
     <div className='main'>
     <Router>
+
       <LanguageProvider>
       <NavBar />
       <Routes>
@@ -42,8 +44,10 @@ export const Main = () => {
 
         {/* Route for individual item detail pages */}
         <Route path="/item/:id" element={
+          <>
           <ItemDetail />
-        
+          <Footer />
+          </>
           } />
         <Route path="/legal" element={
           <Legal />
