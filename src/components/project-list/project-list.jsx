@@ -29,6 +29,15 @@ const ProjectList = () => {
         );
         setRecords(response.data.records);
 
+        const filteredRecords = response.data.records.filter((record) =>
+          (record.fields.TypeOfProject || []).some((type) =>
+            ["Fullstack", "Frontend", "Backend"].includes(type)
+          )
+        );
+  
+        setRecords(filteredRecords);
+
+
         const techStackIds = [
           ...new Set(
             response.data.records.flatMap(
@@ -112,7 +121,7 @@ const ProjectList = () => {
                       </span>
                     </h6>
                     <p className="card-text">{record.fields.Blurb}</p>
-                    <hr></hr>
+                    {/* <hr></hr>
                     <p style={{ fontWeight: "bold" }}>
                       TechStack - Tools - Methodology:
                       <br />
@@ -121,7 +130,7 @@ const ProjectList = () => {
                           {techStackNames[id] || id}
                         </button>
                       ))}
-                    </p>
+                    </p> */}
                   </div>
                   <hr></hr>
                   <div
