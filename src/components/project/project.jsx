@@ -128,7 +128,7 @@ useEffect(() => {
             width: "100px",
                 objectFit: "cover",
                 objectPosition: "top",
-                borderRadius: "10px",
+                borderRadius: "5px",
                 marginBottom: "10px",
               }}
             /></div>
@@ -241,32 +241,36 @@ useEffect(() => {
                 </button>
               ))}
             </p>
-            <p className="lead border-top" style={{ paddingTop: "10px" }}>
-              <strong>Credits:</strong>
-              <br></br>Tutor:&nbsp;
-              {record.fields.Tutor}
-              <br></br>Mentor:&nbsp;
-              {record.fields.Mentor}
-            </p>
-            {record.fields.DesignInspiration && (
-              <p
-                className="lead border-top"
-                style={{ paddingTop: "10px" }}
-              >
-                <h3
-                  className="fw-bold border-bottom"
-                  style={{ paddingBottom: "5px" }}
-                >
-                  <span className="special-purple">Design</span> & Inspiration
-                </h3>
+            {(record.fields.Tutor || record.fields.Mentor) && (
+  <p className="lead border-top" style={{ paddingTop: "10px" }}>
+    <strong>Credits:</strong>
+    <br />
+    Tutor:&nbsp;{record.fields.Tutor}
+    <br />
+    Mentor:&nbsp;{record.fields.Mentor}
+  </p>
+)}
 
-                {record.fields.DesignInspiration.split("\n").map(
+{record.fields.DesignInspiration && record.fields.DesignInspiration.trim() !== "" && (
+  <p
+  className="lead border-top"
+  style={{ paddingTop: "10px" }}
+>
+  <h3
+    className="fw-bold border-bottom"
+    style={{ paddingBottom: "5px" }}
+  >
+    <span className="special-purple">Design</span> & Inspiration
+  </h3>
+  {record.fields.DesignInspiration.split("\n").map(
                   (feature, index) => (
                     <p key={index}>{feature}</p>
                   )
                 )}
               </p>
             )}
+         
+      
          
         </div>
         <div className="col-lg-6 col-md-6 col-sm-12 mb-4">
@@ -433,22 +437,21 @@ useEffect(() => {
           </div>
 
         
-          <div className="row" style={{ paddingTop: "10px" }}>
-            {record.fields.Challenging && (
-              <>
-                <div className="lead col-lg-2 col-md-4 col-sm-12 mb-2">
-                  <strong>Challenges:</strong>
-                </div>
-                <div className="lead col-lg-10 col-md-8 col-sm-12 mb-2">
-                  {record.fields.Challenging.split("\n").map(
-                    (feature, index) => (
-                      <p key={index}>{feature}</p>
-                    )
-                  )}
-                </div>
-              </>
-            )}
-          </div>
+          {record.fields.Challenges && record.fields.Challenges.trim() !== "" && (
+  <div className="row border-bottom" style={{ paddingTop: "10px" }}>
+    <>
+      <div className="lead col-lg-2 col-md-4 col-sm-12 mb-2">
+        <strong>Challenges:</strong>
+      </div>
+      <div className="lead col-lg-10 col-md-8 col-sm-12 mb-2">
+        {record.fields.Challenges.split("\n").map((feature, index) => (
+          <p key={index}>{feature}</p>
+        ))}
+      </div>
+    </>
+  </div>
+)}
+
           <div className="row border-bottom" style={{ paddingTop: "10px" }}>
             {record.fields.Different && (
               <>
@@ -463,20 +466,24 @@ useEffect(() => {
               </>
             )}
           </div> 
-          <div className="row border-bottom" style={{ paddingTop: "10px" }}>
-          {record.fields.Well && (  
-            <>
-                <div className="lead col-lg-2 col-md-4 col-sm-12 mb-2">
-                  <strong>Successes:</strong>
-                </div>
-                <div className="lead col-lg-10 col-md-8 col-sm-12 mb-2">
-                  {record.fields.Well.split("\n").map((feature, index) => (
-                    <p key={index}>{feature}</p>
-                  ))}
-                </div>
-                </>   )}
-        
-          </div>   
+       
+
+          {record.fields.Well && record.fields.Well.trim() !== "" && (
+  <div className="row border-bottom" style={{ paddingTop: "10px" }}>
+    <>
+      <div className="lead col-lg-2 col-md-4 col-sm-12 mb-2">
+        <strong>Successes:</strong>
+      </div>
+      <div className="lead col-lg-10 col-md-8 col-sm-12 mb-2">
+        {record.fields.Well.split("\n").map((feature, index) => (
+          <p key={index}>{feature}</p>
+        ))}
+      </div>
+    </>
+  </div>
+)}
+
+
           {record.fields.Future && (
           <div className="row border-bottom" style={{ paddingTop: "10px" }}>
            
