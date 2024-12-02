@@ -270,6 +270,28 @@ useEffect(() => {
               </p>
             )}
          
+
+         {record.fields.RelatedProjects && record.fields.RelatedProjects.length > 0 && (
+  <div className="border-top mt-3 pt-3">
+    <p className="lead">
+    <strong>Related Projects</strong></p>
+    <div className="gap-2">
+      {record.fields.RelatedProjects.map((projectId) => (
+        <Link
+          to={`/item/${projectId}`} // Assuming your route structure uses this format
+          key={projectId}
+          className="btn btn-black-purple me-2 px-3"
+          onClick={() => {
+            window.scrollTo(0, 0); // Scroll to the top of the page
+          }}
+        >
+          {relatedProjectNames[projectId] || "Loading..."} {/* Show name or fallback */}
+        </Link>
+      ))}
+    </div>
+  </div>
+)}
+
       
          
         </div>
@@ -364,26 +386,6 @@ useEffect(() => {
                 </p>
               </>
             )}
-        {record.fields.RelatedProjects && record.fields.RelatedProjects.length > 0 && (
-  <div className="border-top mt-3 pt-3">
-    <p className="lead">
-    <strong>Related Projects</strong></p>
-    <div className="gap-2">
-      {record.fields.RelatedProjects.map((projectId) => (
-        <Link
-          to={`/item/${projectId}`} // Assuming your route structure uses this format
-          key={projectId}
-          className="btn btn-black-purple me-2 px-3"
-          onClick={() => {
-            window.scrollTo(0, 0); // Scroll to the top of the page
-          }}
-        >
-          {relatedProjectNames[projectId] || "Loading..."} {/* Show name or fallback */}
-        </Link>
-      ))}
-    </div>
-  </div>
-)}
 
 
           </div>
@@ -397,22 +399,45 @@ useEffect(() => {
           </div>
 
           <div className="row" style={{ paddingTop: "10px" }}>
-            {record.fields.Backend && (
-              <div className="lead col-lg-6 col-md-6 col-sm-12 mb-4">
-                <strong>BackEnd</strong>
-                {record.fields.Backend.split("\n").map((feature, index) => (
-                  <p key={index}>{feature}</p>
-                ))}
-              </div>
-            )}
-            {record.fields.Frontend && (
-              <div className="lead col-lg-6 col-md-6 col-sm-12 mb-4">
-                <strong>FrontEnd</strong>
-                {record.fields.Frontend.split("\n").map((feature, index) => (
-                  <p key={index}>{feature}</p>
-                ))}
-              </div>
-            )}
+      
+          
+          <div className="lead col-lg-6 col-md-6 col-sm-12 mb-4">
+  <h3 className="fw-bold">
+    <span className="special-black">FrontEnd</span>
+  </h3>
+  {[
+    { field: 'FrontEndContentOrga', label: 'Content & Organisation' },
+    { field: 'FrontEndFunctionality', label: 'Functionality' },
+    { field: 'FrontEndDesign', label: 'Design' },
+    { field: 'FrontEndSecurity', label: 'Security' },
+  ].map(({ field, label }) =>
+    record.fields[field] ? (
+      <p key={field}>
+        <strong>{label}:</strong> {record.fields[field]}
+      </p>
+    ) : null
+  )}
+</div>
+
+       
+<div className="lead col-lg-6 col-md-6 col-sm-12 mb-4">
+  <h3 className="fw-bold">
+    <span className="special-black">Backend</span>
+  </h3>
+  {[
+    { field: 'BackEndContentOrga', label: 'Content & Organisation' },
+    { field: 'BackEndFunctionality', label: 'Functionality' },
+    { field: 'BackEndSecurity', label: 'Security' },
+    { field: 'BackEndTesting', label: 'Testing' },
+  ].map(({ field, label }) =>
+    record.fields[field] ? (
+      <p key={field}>
+        <strong>{label}:</strong> {record.fields[field]}
+      </p>
+    ) : null
+  )}
+</div>
+           
           </div>
           {record.fields.DecisionsConsequences && (
             <div className="row border-bottom" style={{ paddingTop: "10px" }}>
