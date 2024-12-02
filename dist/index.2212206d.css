@@ -155,9 +155,9 @@ button, input, optgroup, select, textarea {
 .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
   --bs-gutter-x: 1.5rem;
   --bs-gutter-y: 0;
+  width: 100%;
   padding-right: calc(var(--bs-gutter-x) * .5);
   padding-left: calc(var(--bs-gutter-x) * .5);
-  width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -2818,6 +2818,7 @@ button, input, optgroup, select, textarea {
 @media (width <= 575.98px) {
   .offcanvas-sm {
     z-index: var(--bs-offcanvas-zindex);
+    max-width: 100%;
     color: var(--bs-offcanvas-color);
     visibility: hidden;
     background-color: var(--bs-offcanvas-bg);
@@ -2825,7 +2826,6 @@ button, input, optgroup, select, textarea {
     background-clip: padding-box;
     outline: 0;
     flex-direction: column;
-    max-width: 100%;
     display: flex;
     position: fixed;
     bottom: 0;
@@ -2906,6 +2906,7 @@ button, input, optgroup, select, textarea {
 @media (width <= 767.98px) {
   .offcanvas-md {
     z-index: var(--bs-offcanvas-zindex);
+    max-width: 100%;
     color: var(--bs-offcanvas-color);
     visibility: hidden;
     background-color: var(--bs-offcanvas-bg);
@@ -2913,7 +2914,6 @@ button, input, optgroup, select, textarea {
     background-clip: padding-box;
     outline: 0;
     flex-direction: column;
-    max-width: 100%;
     display: flex;
     position: fixed;
     bottom: 0;
@@ -2994,6 +2994,7 @@ button, input, optgroup, select, textarea {
 @media (width <= 991.98px) {
   .offcanvas-lg {
     z-index: var(--bs-offcanvas-zindex);
+    max-width: 100%;
     color: var(--bs-offcanvas-color);
     visibility: hidden;
     background-color: var(--bs-offcanvas-bg);
@@ -3001,7 +3002,6 @@ button, input, optgroup, select, textarea {
     background-clip: padding-box;
     outline: 0;
     flex-direction: column;
-    max-width: 100%;
     display: flex;
     position: fixed;
     bottom: 0;
@@ -3082,6 +3082,7 @@ button, input, optgroup, select, textarea {
 @media (width <= 1199.98px) {
   .offcanvas-xl {
     z-index: var(--bs-offcanvas-zindex);
+    max-width: 100%;
     color: var(--bs-offcanvas-color);
     visibility: hidden;
     background-color: var(--bs-offcanvas-bg);
@@ -3089,7 +3090,6 @@ button, input, optgroup, select, textarea {
     background-clip: padding-box;
     outline: 0;
     flex-direction: column;
-    max-width: 100%;
     display: flex;
     position: fixed;
     bottom: 0;
@@ -3170,6 +3170,7 @@ button, input, optgroup, select, textarea {
 @media (width <= 1399.98px) {
   .offcanvas-xxl {
     z-index: var(--bs-offcanvas-zindex);
+    max-width: 100%;
     color: var(--bs-offcanvas-color);
     visibility: hidden;
     background-color: var(--bs-offcanvas-bg);
@@ -3177,7 +3178,6 @@ button, input, optgroup, select, textarea {
     background-clip: padding-box;
     outline: 0;
     flex-direction: column;
-    max-width: 100%;
     display: flex;
     position: fixed;
     bottom: 0;
@@ -7675,9 +7675,9 @@ fieldset {
 
 legend {
   float: left;
+  width: 100%;
   font-size: calc(1.275rem + .3vw);
   line-height: inherit;
-  width: 100%;
   margin-bottom: .5rem;
   padding: 0;
 }
@@ -7909,9 +7909,9 @@ progress {
 .container, .container-fluid, .container-xxl, .container-xl, .container-lg, .container-md, .container-sm {
   --bs-gutter-x: 1.5rem;
   --bs-gutter-y: 0;
+  width: 100%;
   padding-right: calc(var(--bs-gutter-x) * .5);
   padding-left: calc(var(--bs-gutter-x) * .5);
-  width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -7966,12 +7966,12 @@ progress {
 }
 
 .row > * {
+  width: 100%;
+  max-width: 100%;
   padding-right: calc(var(--bs-gutter-x) * .5);
   padding-left: calc(var(--bs-gutter-x) * .5);
   margin-top: var(--bs-gutter-y);
   flex-shrink: 0;
-  width: 100%;
-  max-width: 100%;
 }
 
 .col {
@@ -9443,13 +9443,13 @@ progress {
 }
 
 .form-control {
+  width: 100%;
   color: var(--bs-body-color);
   appearance: none;
   background-color: var(--bs-body-bg);
   border: var(--bs-border-width) solid var(--bs-border-color);
   border-radius: var(--bs-border-radius);
   background-clip: padding-box;
-  width: 100%;
   padding: .375rem .75rem;
   font-size: 1rem;
   font-weight: 400;
@@ -9527,11 +9527,11 @@ progress {
 }
 
 .form-control-plaintext {
+  width: 100%;
   color: var(--bs-body-color);
   border: solid #0000;
   border-width: var(--bs-border-width) 0;
   background-color: #0000;
-  width: 100%;
   margin-bottom: 0;
   padding: .375rem 0;
   line-height: 1.5;
@@ -9586,8 +9586,8 @@ textarea.form-control-lg {
 }
 
 .form-control-color {
-  height: calc(1.5em + .75rem + calc(var(--bs-border-width) * 2));
   width: 3rem;
+  height: calc(1.5em + .75rem + calc(var(--bs-border-width) * 2));
   padding: .375rem;
 }
 
@@ -9615,6 +9615,7 @@ textarea.form-control-lg {
 
 .form-select {
   --bs-form-select-bg-img: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+  width: 100%;
   color: var(--bs-body-color);
   appearance: none;
   background-color: var(--bs-body-bg);
@@ -9624,7 +9625,6 @@ textarea.form-control-lg {
   background-position: right .75rem center;
   background-repeat: no-repeat;
   background-size: 16px 12px;
-  width: 100%;
   padding: .375rem 2.25rem .375rem .75rem;
   font-size: 1rem;
   font-weight: 400;
@@ -10084,8 +10084,8 @@ textarea.form-control-lg {
 }
 
 .valid-feedback {
-  color: var(--bs-form-valid-color);
   width: 100%;
+  color: var(--bs-form-valid-color);
   margin-top: .25rem;
   font-size: .875em;
   display: none;
@@ -10173,8 +10173,8 @@ textarea.form-control-lg {
 }
 
 .invalid-feedback {
-  color: var(--bs-form-invalid-color);
   width: 100%;
+  color: var(--bs-form-invalid-color);
   margin-top: .25rem;
   font-size: .875em;
   display: none;
@@ -10968,14 +10968,15 @@ textarea.form-control-lg {
 }
 
 .dropdown-divider {
+  height: 0;
   margin: var(--bs-dropdown-divider-margin-y) 0;
   border-top: 1px solid var(--bs-dropdown-divider-bg);
   opacity: 1;
-  height: 0;
   overflow: hidden;
 }
 
 .dropdown-item {
+  width: 100%;
   padding: var(--bs-dropdown-item-padding-y) var(--bs-dropdown-item-padding-x);
   clear: both;
   color: var(--bs-dropdown-link-color);
@@ -10984,7 +10985,6 @@ textarea.form-control-lg {
   border-radius: var(--bs-dropdown-item-border-radius, 0);
   background-color: #0000;
   border: 0;
-  width: 100%;
   font-weight: 400;
   text-decoration: none;
   display: block;
@@ -11780,6 +11780,7 @@ textarea.form-control-lg {
   --bs-card-bg: var(--bs-body-bg);
   --bs-card-img-overlay-padding: 1rem;
   --bs-card-group-margin: .75rem;
+  min-width: 0;
   height: var(--bs-card-height);
   color: var(--bs-body-color);
   word-wrap: break-word;
@@ -11788,7 +11789,6 @@ textarea.form-control-lg {
   border-radius: var(--bs-card-border-radius);
   background-clip: border-box;
   flex-direction: column;
-  min-width: 0;
   display: flex;
   position: relative;
 }
@@ -11977,6 +11977,7 @@ textarea.form-control-lg {
 }
 
 .accordion-button {
+  width: 100%;
   padding: var(--bs-accordion-btn-padding-y) var(--bs-accordion-btn-padding-x);
   color: var(--bs-accordion-btn-color);
   text-align: left;
@@ -11986,7 +11987,6 @@ textarea.form-control-lg {
   border: 0;
   border-radius: 0;
   align-items: center;
-  width: 100%;
   font-size: 1rem;
   display: flex;
   position: relative;
@@ -12456,9 +12456,9 @@ textarea.form-control-lg {
 }
 
 .list-group-item-action {
+  width: 100%;
   color: var(--bs-list-group-action-color);
   text-align: inherit;
-  width: 100%;
 }
 
 .list-group-item-action:hover, .list-group-item-action:focus {
@@ -12819,13 +12819,13 @@ textarea.form-control-lg {
   --bs-btn-close-disabled-opacity: .25;
   --bs-btn-close-white-filter: invert(1) grayscale(100%) brightness(200%);
   box-sizing: content-box;
+  width: 1em;
+  height: 1em;
   color: var(--bs-btn-close-color);
   background: transparent var(--bs-btn-close-bg) center / 1em auto no-repeat;
   opacity: var(--bs-btn-close-opacity);
   border: 0;
   border-radius: .375rem;
-  width: 1em;
-  height: 1em;
   padding: .25em;
 }
 
@@ -12869,6 +12869,7 @@ textarea.form-control-lg {
   --bs-toast-header-bg: rgba(var(--bs-body-bg-rgb), .85);
   --bs-toast-header-border-color: var(--bs-border-color-translucent);
   width: var(--bs-toast-max-width);
+  max-width: 100%;
   font-size: var(--bs-toast-font-size);
   color: var(--bs-toast-color);
   pointer-events: auto;
@@ -12877,7 +12878,6 @@ textarea.form-control-lg {
   box-shadow: var(--bs-toast-box-shadow);
   border-radius: var(--bs-toast-border-radius);
   background-clip: padding-box;
-  max-width: 100%;
 }
 
 .toast.showing {
@@ -12957,9 +12957,9 @@ textarea.form-control-lg {
 }
 
 .modal-dialog {
+  width: auto;
   margin: var(--bs-modal-margin);
   pointer-events: none;
-  width: auto;
   position: relative;
 }
 
@@ -13002,6 +13002,7 @@ textarea.form-control-lg {
 }
 
 .modal-content {
+  width: 100%;
   color: var(--bs-modal-color);
   pointer-events: auto;
   background-color: var(--bs-modal-bg);
@@ -13010,7 +13011,6 @@ textarea.form-control-lg {
   background-clip: padding-box;
   outline: 0;
   flex-direction: column;
-  width: 100%;
   display: flex;
   position: relative;
 }
@@ -13785,6 +13785,7 @@ textarea.form-control-lg {
 @media (width <= 575.98px) {
   .offcanvas-sm {
     z-index: var(--bs-offcanvas-zindex);
+    max-width: 100%;
     color: var(--bs-offcanvas-color);
     visibility: hidden;
     background-color: var(--bs-offcanvas-bg);
@@ -13792,7 +13793,6 @@ textarea.form-control-lg {
     background-clip: padding-box;
     outline: 0;
     flex-direction: column;
-    max-width: 100%;
     display: flex;
     position: fixed;
     bottom: 0;
@@ -13873,6 +13873,7 @@ textarea.form-control-lg {
 @media (width <= 767.98px) {
   .offcanvas-md {
     z-index: var(--bs-offcanvas-zindex);
+    max-width: 100%;
     color: var(--bs-offcanvas-color);
     visibility: hidden;
     background-color: var(--bs-offcanvas-bg);
@@ -13880,7 +13881,6 @@ textarea.form-control-lg {
     background-clip: padding-box;
     outline: 0;
     flex-direction: column;
-    max-width: 100%;
     display: flex;
     position: fixed;
     bottom: 0;
@@ -13961,6 +13961,7 @@ textarea.form-control-lg {
 @media (width <= 991.98px) {
   .offcanvas-lg {
     z-index: var(--bs-offcanvas-zindex);
+    max-width: 100%;
     color: var(--bs-offcanvas-color);
     visibility: hidden;
     background-color: var(--bs-offcanvas-bg);
@@ -13968,7 +13969,6 @@ textarea.form-control-lg {
     background-clip: padding-box;
     outline: 0;
     flex-direction: column;
-    max-width: 100%;
     display: flex;
     position: fixed;
     bottom: 0;
@@ -14049,6 +14049,7 @@ textarea.form-control-lg {
 @media (width <= 1199.98px) {
   .offcanvas-xl {
     z-index: var(--bs-offcanvas-zindex);
+    max-width: 100%;
     color: var(--bs-offcanvas-color);
     visibility: hidden;
     background-color: var(--bs-offcanvas-bg);
@@ -14056,7 +14057,6 @@ textarea.form-control-lg {
     background-clip: padding-box;
     outline: 0;
     flex-direction: column;
-    max-width: 100%;
     display: flex;
     position: fixed;
     bottom: 0;
@@ -14137,6 +14137,7 @@ textarea.form-control-lg {
 @media (width <= 1399.98px) {
   .offcanvas-xxl {
     z-index: var(--bs-offcanvas-zindex);
+    max-width: 100%;
     color: var(--bs-offcanvas-color);
     visibility: hidden;
     background-color: var(--bs-offcanvas-bg);
@@ -14144,7 +14145,6 @@ textarea.form-control-lg {
     background-clip: padding-box;
     outline: 0;
     flex-direction: column;
-    max-width: 100%;
     display: flex;
     position: fixed;
     bottom: 0;
@@ -14224,6 +14224,7 @@ textarea.form-control-lg {
 
 .offcanvas {
   z-index: var(--bs-offcanvas-zindex);
+  max-width: 100%;
   color: var(--bs-offcanvas-color);
   visibility: hidden;
   background-color: var(--bs-offcanvas-bg);
@@ -14231,7 +14232,6 @@ textarea.form-control-lg {
   background-clip: padding-box;
   outline: 0;
   flex-direction: column;
-  max-width: 100%;
   display: flex;
   position: fixed;
   bottom: 0;
