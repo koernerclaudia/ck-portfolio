@@ -386,7 +386,24 @@ useEffect(() => {
                 </p>
               </>
             )}
-
+{record.fields.DemoLink && (
+  <>
+    <iframe
+    style={{
+      borderRadius: "15px"}}
+      width="100%"
+      height="315"
+      src={`https://www.youtube.com/embed/${record.fields.DemoLink}`}
+      title="YouTube video player"
+      frameBorder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowFullScreen
+    ></iframe>
+    <p className="small lh-sm fst-italic">
+      {record.fields.ImgTxt4}
+    </p>
+    </>
+)}
 
           </div>
         </div>
