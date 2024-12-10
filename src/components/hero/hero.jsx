@@ -74,14 +74,14 @@ export const Hero = () => {
                   &nbsp;&nbsp;Github
                 </button>
               </a>
-              <a href={myCV} target="_blank">
+              {/* <a href={myCV} target="_blank">
                 <button
                   type="button"
                   className="btn btn-black-green btn-md px-3 mb-2 me-2 fs-6 fs-sm-5"
                 >
                   {language === "EN" ? "CV (PDF)" : "Lebenslauf Herunterladen"}
                 </button>
-              </a>
+              </a> */}
             </div>
           </div>
         </div>
