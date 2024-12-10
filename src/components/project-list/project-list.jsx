@@ -13,7 +13,7 @@ const ProjectList = () => {
   const { language } = useLanguage();
   const [records, setRecords] = useState([]);
   const [techStackNames, setTechStackNames] = useState({});
-  const colors = ["#f3eefa"]; // add more colors as needed
+  const colors = ["#e4e5fa"]; // add more colors as needed
 
   useEffect(() => {
     const fetchData = async () => {

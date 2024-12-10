@@ -12,7 +12,7 @@ export const Ambition = () => {
   const { language } = useLanguage();
 
   return (
-    <div style={{ backgroundColor: "#f3eefa", width: "100%" }}>
+    <div style={{ backgroundColor: "#e4e5fa", width: "100%" }}>
       <div className="container">
         <div className="my-5 text-center px-4">
           <div className="row flex-xxl-row align-items-center g-5">

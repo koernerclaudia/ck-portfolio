@@ -67,7 +67,7 @@ export const Tools = () => {
     <>
       <div
         className="px-4 py-5 my-5 text-center mb-5"
-        style={{ backgroundColor: "#f3eefa" }}
+        style={{ backgroundColor: "#e4e5fa" }}
         id="tools"
       >
         <h1 className="display-5 fw-bold text-body-emphasis">
