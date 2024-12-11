@@ -1,7 +1,7 @@
 import * as React from "react";
 import { BarChart } from "@mui/x-charts/BarChart";
 
-import axios from "axios";  // You'll need to install axios to make HTTP requests
+import axios from "axios"; // You'll need to install axios to make HTTP requests
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "../../index.scss";
@@ -33,7 +33,7 @@ export default function ChartsOverviewDemo() {
   const processAirtableData = (records) => {
     // Group the records by PrimaryGroup and map to chart data
     const groups = {};
-  
+
     records.forEach((record) => {
       const { PrimaryGroup, Status } = record.fields;
       if (PrimaryGroup && Status) {
@@ -46,34 +46,37 @@ export default function ChartsOverviewDemo() {
           };
         }
         groups[PrimaryGroup].labels.push(record.fields.TechStack || "Unknown");
-        groups[PrimaryGroup].values.push(Status * 100);  // Convert decimal percentage to whole number
+        groups[PrimaryGroup].values.push(Status * 100); // Convert decimal percentage to whole number
       }
     });
-  
+
     const customOrder = [
-      "FrontEnd & Mobile App Dev", "BackEnd WebDev", "WebDev Languages", "Styling", "APIs & Databases", "NoCode & Automation"
+      "FrontEnd & Mobile App Dev",
+      "BackEnd WebDev",
+      "WebDev Languages",
+      "Styling",
+      "APIs & Databases",
+      "NoCode & Automation",
     ];
-    
+
     const sortedGroups = Object.keys(groups)
       .sort((a, b) => customOrder.indexOf(a) - customOrder.indexOf(b))
       .map((key) => groups[key]);
-    
-  
+
     return sortedGroups;
   };
-  
 
   // Helper function to get color based on PrimaryGroup (for simplicity, we are defining some static colors)
   const getGroupColor = (groupName) => {
     const colors = {
-      "FrontEnd & Mobile App Dev": "#997dff", // dark lavender
-      "BackEnd WebDev": "#BE97C6", // mauve
+      FrontEnd: "#997dff", // dark lavender
+      BackEnd: "#BE97C6", // mauve
       "WebDev Languages": "#EFBCD5", // rose pink
-      "Styling":  "#85BFB6", // light green 
+      Styling: "#85BFB6", // light green
       "APIs & Databases": "#528A8F", // dark green
-      "NoCode & Automation": "#D7C6F3", // light lavender
+      "NoCode & AI": "#D7C6F3", // light lavender
     };
-    return colors[groupName] || "#6c757d";  // Default color
+    return colors[groupName] || "#6c757d"; // Default color
   };
 
   // Fetch the data when the component mounts
@@ -89,14 +92,19 @@ export default function ChartsOverviewDemo() {
         </h1>
         <p className="lead mb-4">
           These are the tools, frameworks, libraries, programming & meta
-          languages and more that I have been training on and am using in my projects. <br></br>Percentages shown are based on my self-assessment of my proficiency level.
+          languages and more that I have been training on and am using in my
+          projects. <br></br>Percentages shown are based on my self-assessment
+          of my proficiency level.
         </p>
         <div className="row">
           {chartData.map((data, index) => (
             <div className="col-lg-6 col-sm-12 mb-4" key={index}>
               <div className="card d-flex flex-column align-items-center">
                 <div className="card-body text-center w-100">
-                  <h6 className="card-title" style={{ fontSize: 'clamp(1.2rem, 2.5vw, 1.5rem)' }}>
+                  <h6
+                    className="card-title"
+                    style={{ fontSize: "clamp(1.2rem, 2.5vw, 1.5rem)" }}
+                  >
                     {data.title}
                   </h6>
                   <BarChart
@@ -105,8 +113,10 @@ export default function ChartsOverviewDemo() {
                         scaleType: "band",
                         data: data.labels,
                         sx: {
-                          "& .MuiAxis-label": {
-                            fontSize: "clamp(0.1rem, 1vw, 0.3rem)", // Adjusts label size responsively
+                          "& .MuiAxis-tickLabel": {
+                            fontSize: "clamp(0.1rem, 1vw, 0.1rem)", // Adjusts label size responsively
+                            transform: "rotate(-45deg)", // Rotate labels 45 degrees
+                            textAnchor: "end", // Align labels to end for better readability
                           },
                         },
                       },
@@ -133,9 +143,6 @@ export default function ChartsOverviewDemo() {
                       },
                     }}
                     height={250}
-                    // width={350}
-                   
-                      barLabel="value"
                   />
                 </div>
               </div>
@@ -146,6 +153,3 @@ export default function ChartsOverviewDemo() {
     </div>
   );
 }
-
-
-

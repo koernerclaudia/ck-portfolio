@@ -21,6 +21,8 @@ export const Legal = () => {
               specified. Unauthorized use, reproduction, or distribution of any
               material is prohibited without explicit permission. <br></br>
               <br></br>
+              <br></br>
+              <strong>Illustration of me</strong> Created with Tiktok Profile Avatar
               <strong>404 Error Page</strong> Illustration by <a className="footer-link" href="https://undraw.co/" target="_blank">unDraw</a>
               
               <hr></hr>
