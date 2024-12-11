@@ -68,10 +68,20 @@ export const NavBar = () => {
                     </li>
                     <li className="nav-item custom-nav-buttons">
                       <ScrollLink
+                        to="skills"
+                        smooth={true}
+                        duration={500}
+                        className="btn btn btn-primary"
+                      >
+                        {language === "EN" ? "Skills" : "Fähigkeiten"}
+                      </ScrollLink>
+                    </li>
+                    <li className="nav-item custom-nav-buttons">
+                      <ScrollLink
                         to="tools"
                         smooth={true}
                         duration={500}
-                        className="btn btn-outline-primary"
+                        className="btn btn btn-primary"
                       >
                         {language === "EN" ? "Tools" : "Tools"}
                       </ScrollLink>

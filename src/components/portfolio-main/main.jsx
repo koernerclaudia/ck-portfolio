@@ -34,7 +34,7 @@ export const Main = () => {
               <Hero />
               <Ambition />
               <ProjectList />
-              {/* <ChartsOverviewDemo /> */}
+              <ChartsOverviewDemo />
               <Tools />
               {/* <AboutMe /> */}
               <Footer />
