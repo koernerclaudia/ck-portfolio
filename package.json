@@ -12,8 +12,11 @@
         "test": "echo \"Error: no test specified\" && exit 1",
         "predeploy": "npm run build",
         "deploy": "gh-pages -d dist",
-        "build": "parcel build src/index.html"
+        "build:alt": "parcel build src/index.html",
+        "build": "cp -r ignored-folder/ build-folder/ && other-build-steps"
     },
+
+
     "dependencies": {
         "@emotion/react": "^11.13.3",
         "@emotion/styled": "^11.13.0",
