@@ -12,8 +12,8 @@
         "test": "echo \"Error: no test specified\" && exit 1",
         "predeploy": "npm run build",
         "deploy": "gh-pages -d dist",
-        "build:alt": "parcel build src/index.html",
-        "build": "cp -r ignored-folder/ build-folder/ && other-build-steps"
+        "build": "parcel build src/index.html"
+      
     },
 
 
