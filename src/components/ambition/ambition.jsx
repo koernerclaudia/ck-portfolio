@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import '../../index.scss';
 import Dekra from '../../assets/Dekra-Siegel.png'
-import CIW from '../../assets/CIW.png'
+import CIW from '../../assets/ciw.png'
 
 
 export const Ambition = () => {
